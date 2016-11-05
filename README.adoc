@@ -1,1 +1,27 @@
-= DocBook backend for Asciidoctor.js
+# DocBook backend for Asciidoctor.js
+
+ifdef::env-github[]
+image:http://img.shields.io/travis/mogztter/asciidoctor-docbook.js.svg[Travis build status, link=https://travis-ci.org/mogztter/asciidoctor-docbook.js]
+endif::[]
+
+## Install
+
+ $ npm install asciidoctor-docbook.js
+
+## Usage
+
+```javascript
+var asciidoctor = require('asciidoctor.js')().Asciidoctor();
+require('asciidoctor-docbook.js');
+
+var options = {
+  attributes: ['backend=docbook45', 'doctype=book'],
+  header_footer: true
+};
+var content = '= DocBook\n' +
+              ':doctitle: Awesome Asciidoctor\n' +
+              ':docdate: 2016-01-01\n' +
+              '== First section' +
+              'Once upon a time...';
+var docbook = asciidoctor.convert(content, options);
+```
