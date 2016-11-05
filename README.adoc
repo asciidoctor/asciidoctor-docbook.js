@@ -1,7 +1,7 @@
 # DocBook backend for Asciidoctor.js
 
 ifdef::env-github[]
-image:http://img.shields.io/travis/mogztter/asciidoctor-docbook.js.svg[Travis build status, link=https://travis-ci.org/mogztter/asciidoctor-docbook.js]
+image:http://img.shields.io/travis/Mogztter/asciidoctor-docbook.js.svg[Travis build status, link=https://travis-ci.org/Mogztter/asciidoctor-docbook.js]
 endif::[]
 
 ## Install
