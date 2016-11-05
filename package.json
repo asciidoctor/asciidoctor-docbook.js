@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "build": "node npm/build.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -37,10 +38,12 @@
   },
   "homepage": "https://github.com/mogztter/asciidoctor-docbook.js",
   "devDependencies": {
+    "asciidoctor.js": "^1.5.5-3",
     "async": "^1.5.0",
     "bestikk-download": "^0.1.0",
     "bestikk-fs": "^0.1.0",
     "bestikk-log": "0.1.0",
-    "bestikk-opal-compiler": "0.2.0"
+    "bestikk-opal-compiler": "0.2.0",
+    "mocha": "^3.1.2"
   }
 }
