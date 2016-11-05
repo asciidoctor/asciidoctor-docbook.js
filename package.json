@@ -1,0 +1,46 @@
+{
+  "name": "asciidoctor-docbook.js",
+  "version": "0.1.0",
+  "description": "DocBook back-end for Asciidoctor.js",
+  "main": "dist/main.js",
+  "engines": {
+    "node": ">=0.12",
+    "npm": ">=3.0.0"
+  },
+  "files": [
+    "dist",
+    "LICENSE.adoc",
+    "README.adoc"
+  ],
+  "scripts": {
+    "build": "node npm/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mogztter/asciidoctor-docbook.js.git"
+  },
+  "keywords": [
+    "asciidoc",
+    "asciidoctor",
+    "opal",
+    "javascript",
+    "library",
+    "backend",
+    "docbook"
+  ],
+  "authors": [
+    "Guillaume Grossetie (https://github.com/mogztter)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mogztter/asciidoctor-docbook.js/issues"
+  },
+  "homepage": "https://github.com/mogztter/asciidoctor-docbook.js",
+  "devDependencies": {
+    "async": "^1.5.0",
+    "bestikk-download": "^0.1.0",
+    "bestikk-fs": "^0.1.0",
+    "bestikk-log": "0.1.0",
+    "bestikk-opal-compiler": "0.2.0"
+  }
+}
