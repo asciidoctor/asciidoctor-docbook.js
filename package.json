@@ -13,7 +13,7 @@
     "README.adoc"
   ],
   "scripts": {
-    "build": "node npm/build.js"
+    "build": "node npm/build.js",
     "test": "mocha"
   },
   "repository": {
