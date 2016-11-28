@@ -12,7 +12,7 @@ endif::[]
 ## Usage
 
 ```javascript
-var asciidoctor = require('asciidoctor.js')().Asciidoctor();
+var asciidoctor = require('asciidoctor.js')();
 require('asciidoctor-docbook.js');
 
 var options = {

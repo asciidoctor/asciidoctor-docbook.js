@@ -1,6 +1,6 @@
 {
   "name": "asciidoctor-docbook.js",
-  "version": "1.5.5-1",
+  "version": "1.5.5-4",
   "description": "DocBook back-end for Asciidoctor.js",
   "main": "dist/main.js",
   "engines": {
@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/mogztter/asciidoctor-docbook.js",
   "dependencies": {
-    "asciidoctor.js": "^1.5.5-3"
+    "asciidoctor.js": "1.5.5-4"
   },
   "devDependencies": {
     "async": "^1.5.0",

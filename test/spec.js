@@ -1,4 +1,4 @@
-var asciidoctor = require('asciidoctor.js')().Asciidoctor();
+var asciidoctor = require('asciidoctor.js')();
 require('../dist/main.js'); // Asciidoctor DocBook
 var assert = require('assert');
 
