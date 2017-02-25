@@ -1,6 +1,6 @@
 {
   "name": "asciidoctor-docbook.js",
-  "version": "1.5.5-4",
+  "version": "1.5.5-integration1",
   "description": "DocBook back-end for Asciidoctor.js",
   "main": "dist/main.js",
   "engines": {
