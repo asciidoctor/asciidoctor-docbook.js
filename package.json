@@ -45,7 +45,7 @@
     "bestikk-download": "^0.1.0",
     "bestikk-fs": "^0.1.0",
     "bestikk-log": "0.1.0",
-    "bestikk-opal-compiler": "0.2.0",
+    "bestikk-opal-compiler": "0.3.0-integration2",
     "mocha": "^3.1.2"
   }
 }
