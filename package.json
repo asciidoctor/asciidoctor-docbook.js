@@ -13,8 +13,7 @@
     "README.adoc"
   ],
   "scripts": {
-    "build": "node npm/build.js",
-    "test": "mocha"
+    "build": "node npm/build.js"
   },
   "repository": {
     "type": "git",
@@ -37,9 +36,6 @@
     "url": "https://github.com/mogztter/asciidoctor-docbook.js/issues"
   },
   "homepage": "https://github.com/mogztter/asciidoctor-docbook.js",
-  "dependencies": {
-    "asciidoctor.js": "1.5.5-integration1"
-  },
   "devDependencies": {
     "async": "^1.5.0",
     "bestikk-download": "^0.1.0",
