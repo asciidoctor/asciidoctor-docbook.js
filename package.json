@@ -1,6 +1,6 @@
 {
   "name": "asciidoctor-docbook.js",
-  "version": "1.5.5-integration2",
+  "version": "1.5.5-integration3",
   "description": "DocBook back-end for Asciidoctor.js",
   "main": "dist/main.js",
   "engines": {
@@ -41,7 +41,7 @@
     "bestikk-download": "^0.1.0",
     "bestikk-fs": "^0.1.0",
     "bestikk-log": "0.1.0",
-    "bestikk-opal-compiler": "0.3.0-integration2",
+    "bestikk-opal-compiler": "0.3.0-integration6",
     "mocha": "^3.1.2"
   }
 }
