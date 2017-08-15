@@ -7,6 +7,7 @@ endif::[]
 
 ## Install
 
+ $ npm install asciidoctor.js
  $ npm install asciidoctor-docbook.js
 
 ## Usage
@@ -15,14 +16,15 @@ endif::[]
 var asciidoctor = require('asciidoctor.js')();
 require('asciidoctor-docbook.js');
 
-var options = {
-  attributes: ['backend=docbook45', 'doctype=book'],
+const options = {
+  attributes: {backend: 'docbook45', doctype: 'book'},
   header_footer: true
 };
-var content = '= DocBook\n' +
-              ':doctitle: Awesome Asciidoctor\n' +
-              ':docdate: 2016-01-01\n' +
-              '== First section' +
-              'Once upon a time...';
-var docbook = asciidoctor.convert(content, options);
+const content = `= DocBook\n\
+                 :doctitle: Awesome Asciidoctor\n\
+                 :docdate: 2016-01-01\n\n\
+                 == First section\n\
+                 Once upon a time...`;
+const docbook = asciidoctor.convert(content, options);
+console.log(docbook);
 ```
