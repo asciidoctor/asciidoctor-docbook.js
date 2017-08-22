@@ -14,17 +14,18 @@ endif::[]
 
 ```javascript
 var asciidoctor = require('asciidoctor.js')();
-require('asciidoctor-docbook.js');
+require('asciidoctor-docbook.js')();
 
 const options = {
   attributes: {backend: 'docbook45', doctype: 'book'},
   header_footer: true
 };
 const content = `= DocBook\n\
-                 :doctitle: Awesome Asciidoctor\n\
-                 :docdate: 2016-01-01\n\n\
-                 == First section\n\
-                 Once upon a time...`;
+:doctitle: Awesome Asciidoctor\n\
+:docdate: 2016-01-01\n\n\
+== First section\n\
+Once upon a time...`;
+
 const docbook = asciidoctor.convert(content, options);
-console.log(docbook);
+//console.log(docbook);
 ```
