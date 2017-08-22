@@ -1,5 +1,5 @@
 var asciidoctor = require('asciidoctor.js')();
-require('../dist/main.js'); // Asciidoctor DocBook
+require('../dist/main.js')(); // Asciidoctor DocBook
 var assert = require('assert');
 
 describe('Rendering', function () {
