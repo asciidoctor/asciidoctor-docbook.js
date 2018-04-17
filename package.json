@@ -50,6 +50,6 @@
     "asciidoctor.js": ">=1.5.6 <1.6"
   },
   "dependencies": {
-    "asciidoctor.js": "^1.5.6"
+    "asciidoctor.js": "1.5.6"
   }
 }
