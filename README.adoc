@@ -7,8 +7,7 @@ endif::[]
 
 ## Install
 
- $ npm install asciidoctor.js
- $ npm install asciidoctor-docbook.js
+ $ npm i asciidoctor.js asciidoctor-docbook.js
 
 ## Usage
 

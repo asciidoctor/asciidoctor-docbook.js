@@ -1,11 +1,12 @@
 {
   "name": "asciidoctor-docbook.js",
-  "version": "1.5.6-preview.2",
+  "version": "1.5.6",
   "description": "DocBook back-end for Asciidoctor.js",
   "main": "dist/main.js",
   "engines": {
-    "node": ">=4",
-    "npm": ">=3.0.0"
+    "node": ">=6.12",
+    "npm": ">=3.0.0",
+    "yarn": ">=1.1.0"
   },
   "files": [
     "dist",
@@ -38,12 +39,17 @@
   },
   "homepage": "https://github.com/mogztter/asciidoctor-docbook.js",
   "devDependencies": {
-    "asciidoctor.js": "1.5.6-preview.3",
-    "async": "1.5.2",
+    "async": "2.6.0",
     "bestikk-download": "0.1.0",
     "bestikk-fs": "0.1.0",
     "bestikk-log": "0.1.0",
-    "bestikk-opal-compiler": "0.3.0-integration7",
-    "mocha": "3.5.0"
+    "mocha": "3.5.3",
+    "opal-compiler": "1.0.3"
+  },
+  "peerDependencies": {
+    "asciidoctor.js": ">=1.5.6 <1.6"
+  },
+  "dependencies": {
+    "asciidoctor.js": "^1.5.6"
   }
 }
