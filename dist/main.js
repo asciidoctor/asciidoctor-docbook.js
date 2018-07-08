@@ -37,20 +37,22 @@ Opal.modules["asciidoctor/converter/docbook5"] = function(Opal) {
   }
   var self = Opal.top, $nesting = [], nil = Opal.nil, $$$ = Opal.const_get_qualified, $$ = Opal.const_get_relative, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass, $truthy = Opal.truthy, $hash2 = Opal.hash2, $send = Opal.send, $gvars = Opal.gvars;
 
-  Opal.add_stubs(['$==', '$doctype', '$<<', '$doctype_declaration', '$attr?', '$attr', '$lang_attribute_name', '$document_ns_attributes', '$noheader', '$document_info_element', '$blocks?', '$content', '$empty?', '$docinfo', '$*', '$document', '$[]', '$sectname', '$common_attributes', '$id', '$role', '$reftext', '$title', '$title_tag', '$resolve_content', '$title?', '$each', '$items', '$text', '$default=', '$-', '$style', '$nil?', '$text?', '$level', '$image_uri', '$alt', '$!', '$index', '$subs', '$delete_at', '$>', '$insert', '$unshift', '$require_library', '$to_mathml', '$parse', '$===', '$parent', '$warn', '$context', '$option?', '$include?', '$columns', '$by_section', '$rows', '$colspan', '$column', '$+', '$rowspan', '$type', '$attributes', '$target', '$inspect', '$icon_uri', '$size', '$chop', '$gsub', '$strip', '$squeeze', '$notitle', '$document_title_tags', '$doctitle', '$has_header?', '$<', '$to_i', '$author_element', '$times', '$cover_tag', '$subtitle?', '$main', '$subtitle', '$content_model', '$=~', '$new', '$key?']);
+  Opal.add_stubs(['$==', '$doctype', '$<<', '$doctype_declaration', '$attr?', '$attr', '$lang_attribute_name', '$document_ns_attributes', '$noheader', '$document_info_tag', '$blocks?', '$content', '$empty?', '$docinfo', '$*', '$document', '$[]', '$sectname', '$special', '$option?', '$title', '$common_attributes', '$id', '$role', '$reftext', '$title_tag', '$resolve_content', '$title?', '$each', '$items', '$text', '$default=', '$-', '$style', '$text?', '$level', '$image_uri', '$alt', '$!', '$index', '$subs', '$delete_at', '$>', '$insert', '$unshift', '$nil?', '$require_library', '$to_mathml', '$parse', '$===', '$parent', '$warn', '$logger', '$context', '$error', '$content_model', '$blockquote_tag', '$has_role?', '$include?', '$columns', '$by_section', '$rows', '$colspan', '$column', '$+', '$rowspan', '$type', '$attributes', '$target', '$inspect', '$icon_uri', '$size', '$chop', '$gsub', '$strip', '$squeeze', '$notitle', '$document_title_tags', '$doctitle', '$=~', '$has_header?', '$<', '$to_i', '$author_tag', '$times', '$cover_tag', '$map', '$subtitle?', '$main', '$subtitle', '$new', '$key?']);
   return (function($base, $parent_nesting) {
-    var $Asciidoctor, self = $Asciidoctor = $module($base, 'Asciidoctor');
+    function $Asciidoctor() {};
+    var self = $Asciidoctor = $module($base, 'Asciidoctor', $Asciidoctor);
 
-    var def = self.$$proto, $nesting = [self].concat($parent_nesting);
+    var def = self.prototype, $nesting = [self].concat($parent_nesting);
 
     (function($base, $super, $parent_nesting) {
       function $DocBook5Converter(){};
       var self = $DocBook5Converter = $klass($base, $super, 'DocBook5Converter', $DocBook5Converter);
 
-      var def = self.$$proto, $nesting = [self].concat($parent_nesting), TMP_DocBook5Converter_document_1, TMP_DocBook5Converter_section_2, TMP_DocBook5Converter_admonition_3, TMP_DocBook5Converter_colist_5, TMP_DocBook5Converter_dlist_10, TMP_DocBook5Converter_example_11, TMP_DocBook5Converter_floating_title_12, TMP_DocBook5Converter_image_13, TMP_DocBook5Converter_listing_14, TMP_DocBook5Converter_literal_15, TMP_DocBook5Converter_stem_16, TMP_DocBook5Converter_olist_18, TMP_DocBook5Converter_open_19, TMP_DocBook5Converter_page_break_20, TMP_DocBook5Converter_paragraph_21, TMP_DocBook5Converter_preamble_22, TMP_DocBook5Converter_quote_23, TMP_DocBook5Converter_thematic_break_24, TMP_DocBook5Converter_sidebar_25, TMP_DocBook5Converter_table_31, TMP_DocBook5Converter_ulist_34, TMP_DocBook5Converter_verse_35, TMP_DocBook5Converter_inline_anchor_36, TMP_DocBook5Converter_inline_break_37, TMP_DocBook5Converter_inline_button_38, TMP_DocBook5Converter_inline_callout_39, TMP_DocBook5Converter_inline_footnote_40, TMP_DocBook5Converter_inline_image_41, TMP_DocBook5Converter_inline_indexterm_42, TMP_DocBook5Converter_inline_kbd_43, TMP_DocBook5Converter_inline_menu_44, TMP_DocBook5Converter_inline_quoted_45, TMP_DocBook5Converter_author_element_46, TMP_DocBook5Converter_common_attributes_47, TMP_DocBook5Converter_doctype_declaration_48, TMP_DocBook5Converter_document_info_element_50, TMP_DocBook5Converter_document_ns_attributes_51, TMP_DocBook5Converter_lang_attribute_name_52, TMP_DocBook5Converter_document_title_tags_53, TMP_DocBook5Converter_resolve_content_54, TMP_DocBook5Converter_title_tag_55, TMP_DocBook5Converter_cover_tag_56, $writer = nil;
+      var def = self.prototype, $nesting = [self].concat($parent_nesting), TMP_DocBook5Converter_document_1, TMP_DocBook5Converter_section_2, TMP_DocBook5Converter_admonition_3, TMP_DocBook5Converter_colist_5, TMP_DocBook5Converter_dlist_10, TMP_DocBook5Converter_example_11, TMP_DocBook5Converter_floating_title_12, TMP_DocBook5Converter_image_13, TMP_DocBook5Converter_listing_14, TMP_DocBook5Converter_literal_15, TMP_DocBook5Converter_stem_16, TMP_DocBook5Converter_olist_18, TMP_DocBook5Converter_open_19, TMP_DocBook5Converter_page_break_20, TMP_DocBook5Converter_paragraph_21, TMP_DocBook5Converter_preamble_22, TMP_DocBook5Converter_quote_24, TMP_DocBook5Converter_thematic_break_25, TMP_DocBook5Converter_sidebar_26, TMP_DocBook5Converter_table_32, TMP_DocBook5Converter_ulist_35, TMP_DocBook5Converter_verse_37, TMP_DocBook5Converter_inline_anchor_38, TMP_DocBook5Converter_inline_break_39, TMP_DocBook5Converter_inline_button_40, TMP_DocBook5Converter_inline_callout_41, TMP_DocBook5Converter_inline_footnote_42, TMP_DocBook5Converter_inline_image_43, TMP_DocBook5Converter_inline_indexterm_44, TMP_DocBook5Converter_inline_kbd_45, TMP_DocBook5Converter_inline_menu_46, TMP_DocBook5Converter_inline_quoted_47, TMP_DocBook5Converter_common_attributes_48, TMP_DocBook5Converter_doctype_declaration_49, TMP_DocBook5Converter_author_tag_50, TMP_DocBook5Converter_document_info_tag_53, TMP_DocBook5Converter_document_ns_attributes_54, TMP_DocBook5Converter_lang_attribute_name_55, TMP_DocBook5Converter_document_title_tags_56, TMP_DocBook5Converter_resolve_content_57, TMP_DocBook5Converter_title_tag_58, TMP_DocBook5Converter_cover_tag_59, TMP_DocBook5Converter_blockquote_tag_60, $writer = nil;
 
-      def.asciimath_available = nil;
+      def.asciimath = nil;
       
+      Opal.const_set($nesting[0], 'CopyrightRx', /^(.+?)(?: ((?:\d{4}\-)?\d{4}))?$/);
       Opal.const_set($nesting[0], 'ImageMacroRx', /^image::?(.+?)\[(.*?)\]$/);
       
       Opal.def(self, '$document', TMP_DocBook5Converter_document_1 = function $$document(node) {
@@ -76,14 +78,14 @@ Opal.modules["asciidoctor/converter/docbook5"] = function(Opal) {
             result['$<<']("<?asciidoc-numbered?>")
           }};
         lang_attribute = (function() {if ($truthy(node['$attr?']("nolang"))) {
-          return nil
+          return ""
         } else {
           return "" + " " + (self.$lang_attribute_name()) + "=\"" + (node.$attr("lang", "en")) + "\""
         }; return nil; })();
         result['$<<']("" + "<" + (root_tag_name) + (self.$document_ns_attributes(node)) + (lang_attribute) + ">");
         if ($truthy(node.$noheader())) {
         } else {
-          result['$<<'](self.$document_info_element(node, root_tag_name))
+          result['$<<'](self.$document_info_tag(node, root_tag_name))
         };
         if ($truthy(node['$blocks?']())) {
           result['$<<'](node.$content())};
@@ -98,7 +100,7 @@ Opal.modules["asciidoctor/converter/docbook5"] = function(Opal) {
       Opal.const_set($nesting[0], 'MANPAGE_SECTION_TAGS', $hash2(["section", "synopsis"], {"section": "refsection", "synopsis": "refsynopsisdiv"}));
       
       Opal.def(self, '$section', TMP_DocBook5Converter_section_2 = function $$section(node) {
-        var $a, self = this, tag_name = nil;
+        var $a, self = this, tag_name = nil, title_el = nil;
 
         
         if (node.$document().$doctype()['$==']("manpage")) {
@@ -106,7 +108,12 @@ Opal.modules["asciidoctor/converter/docbook5"] = function(Opal) {
         } else {
           tag_name = node.$sectname()
         };
-        return "" + "<" + (tag_name) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">\n" + "<title>" + (node.$title()) + "</title>\n" + (node.$content()) + "\n" + "</" + (tag_name) + ">";
+        title_el = (function() {if ($truthy(($truthy($a = node.$special()) ? node['$option?']("untitled") : $a))) {
+          return ""
+        } else {
+          return "" + "<title>" + (node.$title()) + "</title>\n"
+        }; return nil; })();
+        return "" + "<" + (tag_name) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">\n" + (title_el) + (node.$content()) + "\n" + "</" + (tag_name) + ">";
       }, TMP_DocBook5Converter_section_2.$$arity = 1);
       
       Opal.def(self, '$admonition', TMP_DocBook5Converter_admonition_3 = function $$admonition(node) {
@@ -160,14 +167,12 @@ if (terms == null) terms = nil;if (dd == null) dd = nil;
 if (dt == null) dt = nil;
             return result['$<<']("" + "<simpara>" + (dt.$text()) + "</simpara>")}, TMP_7.$$s = self, TMP_7.$$arity = 1, TMP_7));
             result['$<<']("" + "</entry>\n" + "<entry>");
-            if ($truthy(dd['$nil?']())) {
-            } else {
+            if ($truthy(dd)) {
               
               if ($truthy(dd['$text?']())) {
                 result['$<<']("" + "<simpara>" + (dd.$text()) + "</simpara>")};
               if ($truthy(dd['$blocks?']())) {
-                result['$<<'](dd.$content())};
-            };
+                result['$<<'](dd.$content())};};
             return result['$<<']("" + "</entry>\n" + "</row>");}, TMP_6.$$s = self, TMP_6.$$arity = 2, TMP_6));
           result['$<<']("" + "</tbody>\n" + "</tgroup>\n" + "</" + (tag_name) + ">");
         } else {
@@ -195,14 +200,12 @@ if (dt == null) dt = nil;
             if ($truthy(label_tag)) {
               result['$<<']("" + "</" + (label_tag) + ">")};
             result['$<<']("" + "<" + (item_tag) + ">");
-            if ($truthy(dd['$nil?']())) {
-            } else {
+            if ($truthy(dd)) {
               
               if ($truthy(dd['$text?']())) {
                 result['$<<']("" + "<simpara>" + (dd.$text()) + "</simpara>")};
               if ($truthy(dd['$blocks?']())) {
-                result['$<<'](dd.$content())};
-            };
+                result['$<<'](dd.$content())};};
             result['$<<']("" + "</" + (item_tag) + ">");
             return result['$<<']("" + "</" + (entry_tag) + ">");}, TMP_8.$$s = self, TMP_8.$$arity = 2, TMP_8));
           if ($truthy(list_tag)) {
@@ -234,8 +237,8 @@ if (dt == null) dt = nil;
         if ($truthy(node['$attr?']("scaledwidth"))) {
           
           width_attribute = "" + " width=\"" + (node.$attr("scaledwidth")) + "\"";
-          depth_attribute = nil;
-          scale_attribute = nil;
+          depth_attribute = "";
+          scale_attribute = "";
         } else if ($truthy(node['$attr?']("scale"))) {
           scale_attribute = "" + " scale=\"" + (node.$attr("scale")) + "\""
         } else {
@@ -243,19 +246,19 @@ if (dt == null) dt = nil;
           width_attribute = (function() {if ($truthy(node['$attr?']("width"))) {
             return "" + " contentwidth=\"" + (node.$attr("width")) + "\""
           } else {
-            return nil
+            return ""
           }; return nil; })();
           depth_attribute = (function() {if ($truthy(node['$attr?']("height"))) {
             return "" + " contentdepth=\"" + (node.$attr("height")) + "\""
           } else {
-            return nil
+            return ""
           }; return nil; })();
-          scale_attribute = nil;
+          scale_attribute = "";
         };
         align_attribute = (function() {if ($truthy(node['$attr?']("align"))) {
           return "" + " align=\"" + (node.$attr("align")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         mediaobject = "" + "<mediaobject>\n" + "<imageobject>\n" + "<imagedata fileref=\"" + (node.$image_uri(node.$attr("target"))) + "\"" + (width_attribute) + (depth_attribute) + (scale_attribute) + (align_attribute) + "/>\n" + "</imageobject>\n" + "<textobject><phrase>" + (node.$alt()) + "</phrase></textobject>\n" + "</mediaobject>";
         if ($truthy(node['$title?']())) {
@@ -281,13 +284,13 @@ if (dt == null) dt = nil;
           listing_content = "" + "<programlisting" + ((function() {if ($truthy(informal)) {
             return listing_attributes
           } else {
-            return nil
-          }; return nil; })()) + " language=\"" + (node.$attr("language", nil, false)) + "\" linenumbering=\"" + (numbering) + "\">" + (node.$content()) + "</programlisting>";
+            return ""
+          }; return nil; })()) + " language=\"" + (node.$attr("language", "", false)) + "\" linenumbering=\"" + (numbering) + "\">" + (node.$content()) + "</programlisting>";
         } else {
           listing_content = "" + "<screen" + ((function() {if ($truthy(informal)) {
             return listing_attributes
           } else {
-            return nil
+            return ""
           }; return nil; })()) + ">" + (node.$content()) + "</screen>"
         };
         if ($truthy(informal)) {
@@ -326,12 +329,11 @@ if (dt == null) dt = nil;
           equation = node.$content()
         };
         if (node.$style()['$==']("asciimath")) {
-          if ($truthy(($truthy($a = (($b = $$$('::', 'AsciiMath', 'skip_raise')) ? 'constant' : nil)) ? $a : (function() {if ($truthy((($c = self['asciimath_available'], $c != null && $c !== nil) ? 'instance-variable' : nil))) {
-            return self.asciimath_available
+          if ((self.asciimath = ($truthy($a = self.asciimath) ? $a : (function() {if ($truthy(($truthy($b = (($c = $$$('::', 'AsciiMath', 'skip_raise')) ? 'constant' : nil)) ? $b : $$($nesting, 'Helpers').$require_library("asciimath", true, "warn"))['$nil?']())) {
+            return "unavailable"
           } else {
-            
-            return (self.asciimath_available = $$($nesting, 'Helpers').$require_library("asciimath", true, "warn"));
-          }; return nil; })()))) {
+            return "loaded"
+          }; return nil; })()))['$==']("loaded")) {
             equation_data = $$$('::', 'AsciiMath').$parse(equation).$to_mathml("mml:", $hash2(["xmlns:mml"], {"xmlns:mml": "http://www.w3.org/1998/Math/MathML"}))
           } else {
             equation_data = "" + "<mathphrase><![CDATA[" + (equation) + "]]></mathphrase>"
@@ -354,12 +356,12 @@ if (dt == null) dt = nil;
         num_attribute = (function() {if ($truthy(node.$style())) {
           return "" + " numeration=\"" + (node.$style()) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         start_attribute = (function() {if ($truthy(node['$attr?']("start"))) {
           return "" + " startingnumber=\"" + (node.$attr("start")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         result['$<<']("" + "<orderedlist" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (num_attribute) + (start_attribute) + ">");
         if ($truthy(node['$title?']())) {
@@ -377,12 +379,12 @@ if (item == null) item = nil;
       }, TMP_DocBook5Converter_olist_18.$$arity = 1);
       
       Opal.def(self, '$open', TMP_DocBook5Converter_open_19 = function $$open(node) {
-        var $a, $b, self = this, $case = nil;
+        var $a, $b, self = this, $case = nil, id = nil, reftext = nil, role = nil, content_spacer = nil;
 
         return (function() {$case = node.$style();
         if ("abstract"['$===']($case)) {if ($truthy((($a = node.$parent()['$=='](node.$document())) ? node.$document().$doctype()['$==']("book") : node.$parent()['$=='](node.$document())))) {
           
-          self.$warn("asciidoctor: WARNING: abstract block cannot be used in a document without a title when doctype is book. Excluding block content.");
+          self.$logger().$warn("abstract block cannot be used in a document without a title when doctype is book. Excluding block content.");
           return "";
         } else {
           return "" + "<abstract>\n" + (self.$title_tag(node)) + (self.$resolve_content(node)) + "\n" + "</abstract>"
@@ -391,10 +393,28 @@ if (item == null) item = nil;
           return "" + "<partintro" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">\n" + (self.$title_tag(node)) + (self.$resolve_content(node)) + "\n" + "</partintro>"
         } else {
           
-          self.$warn("asciidoctor: ERROR: partintro block can only be used when doctype is book and it's a child of a part section. Excluding block content.");
+          self.$logger().$error("partintro block can only be used when doctype is book and must be a child of a book part. Excluding block content.");
           return "";
         }}
-        else {return node.$content()}})()
+        else {
+        if ($truthy((id = node.$id()))) {
+          reftext = node.$reftext()};
+        role = node.$role();
+        if ($truthy(node['$title?']())) {
+          return "" + "<formalpara" + (self.$common_attributes(id, role, reftext)) + ">\n" + "<title>" + (node.$title()) + "</title>\n" + "<para>" + ((content_spacer = (function() {if (node.$content_model()['$==']("compound")) {
+            return $$($nesting, 'LF')
+          } else {
+            return ""
+          }; return nil; })())) + (node.$content()) + (content_spacer) + "</para>\n" + "</formalpara>"
+        } else if ($truthy(($truthy($a = id) ? $a : role))) {
+          if (node.$content_model()['$==']("compound")) {
+            return "" + "<para" + (self.$common_attributes(id, role, reftext)) + ">\n" + (node.$content()) + "\n" + "</para>"
+          } else {
+            return "" + "<simpara" + (self.$common_attributes(id, role, reftext)) + ">" + (node.$content()) + "</simpara>"
+          }
+        } else {
+          return self.$resolve_content(node)
+        };}})()
       }, TMP_DocBook5Converter_open_19.$$arity = 1);
       
       Opal.def(self, '$page_break', TMP_DocBook5Converter_page_break_20 = function $$page_break(node) {
@@ -423,42 +443,29 @@ if (item == null) item = nil;
         }
       }, TMP_DocBook5Converter_preamble_22.$$arity = 1);
       
-      Opal.def(self, '$quote', TMP_DocBook5Converter_quote_23 = function $$quote(node) {
-        var $a, self = this, result = nil;
+      Opal.def(self, '$quote', TMP_DocBook5Converter_quote_24 = function $$quote(node) {
+        var $a, TMP_23, self = this;
 
-        
-        result = [];
-        result['$<<']("" + "<blockquote" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">");
-        if ($truthy(node['$title?']())) {
-          result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
-        if ($truthy(($truthy($a = node['$attr?']("attribution")) ? $a : node['$attr?']("citetitle")))) {
-          
-          result['$<<']("<attribution>");
-          if ($truthy(node['$attr?']("attribution"))) {
-            result['$<<'](node.$attr("attribution"))};
-          if ($truthy(node['$attr?']("citetitle"))) {
-            result['$<<']("" + "<citetitle>" + (node.$attr("citetitle")) + "</citetitle>")};
-          result['$<<']("</attribution>");};
-        result['$<<'](self.$resolve_content(node));
-        result['$<<']("</blockquote>");
-        return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_quote_23.$$arity = 1);
+        return $send(self, 'blockquote_tag', [node, ($truthy($a = node['$has_role?']("epigraph")) ? "epigraph" : $a)], (TMP_23 = function(){var self = TMP_23.$$s || this;
+
+        return self.$resolve_content(node)}, TMP_23.$$s = self, TMP_23.$$arity = 0, TMP_23))
+      }, TMP_DocBook5Converter_quote_24.$$arity = 1);
       
-      Opal.def(self, '$thematic_break', TMP_DocBook5Converter_thematic_break_24 = function $$thematic_break(node) {
+      Opal.def(self, '$thematic_break', TMP_DocBook5Converter_thematic_break_25 = function $$thematic_break(node) {
         var self = this;
 
         return "<simpara><?asciidoc-hr?></simpara>"
-      }, TMP_DocBook5Converter_thematic_break_24.$$arity = 1);
+      }, TMP_DocBook5Converter_thematic_break_25.$$arity = 1);
       
-      Opal.def(self, '$sidebar', TMP_DocBook5Converter_sidebar_25 = function $$sidebar(node) {
+      Opal.def(self, '$sidebar', TMP_DocBook5Converter_sidebar_26 = function $$sidebar(node) {
         var self = this;
 
         return "" + "<sidebar" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">\n" + (self.$title_tag(node)) + (self.$resolve_content(node)) + "\n" + "</sidebar>"
-      }, TMP_DocBook5Converter_sidebar_25.$$arity = 1);
+      }, TMP_DocBook5Converter_sidebar_26.$$arity = 1);
       Opal.const_set($nesting[0], 'TABLE_PI_NAMES', ["dbhtml", "dbfo", "dblatex"]);
       
-      Opal.def(self, '$table', TMP_DocBook5Converter_table_31 = function $$table(node) {
-        var TMP_26, TMP_27, TMP_28, self = this, has_body = nil, result = nil, pgwide_attribute = nil, tag_name = nil, col_width_key = nil, width = nil;
+      Opal.def(self, '$table', TMP_DocBook5Converter_table_32 = function $$table(node) {
+        var TMP_27, TMP_28, TMP_29, self = this, has_body = nil, result = nil, pgwide_attribute = nil, frame = nil, tag_name = nil, col_width_key = nil, width = nil;
 
         
         has_body = false;
@@ -466,13 +473,15 @@ if (item == null) item = nil;
         pgwide_attribute = (function() {if ($truthy(node['$option?']("pgwide"))) {
           return " pgwide=\"1\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
+        if ((frame = node.$attr("frame", "all"))['$==']("ends")) {
+          frame = "topbot"};
         result['$<<']("" + "<" + ((tag_name = (function() {if ($truthy(node['$title?']())) {
           return "table"
         } else {
           return "informaltable"
-        }; return nil; })())) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (pgwide_attribute) + " frame=\"" + (node.$attr("frame", "all")) + "\" rowsep=\"" + ((function() {if ($truthy(["none", "cols"]['$include?'](node.$attr("grid")))) {
+        }; return nil; })())) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (pgwide_attribute) + " frame=\"" + (frame) + "\" rowsep=\"" + ((function() {if ($truthy(["none", "cols"]['$include?'](node.$attr("grid")))) {
           return 0
         } else {
           return 1
@@ -480,10 +489,10 @@ if (item == null) item = nil;
           return 0
         } else {
           return 1
-        }; return nil; })()) + "\"" + ((function() {if ($truthy(node['$attr?']("orientation", "landscape", nil))) {
+        }; return nil; })()) + "\"" + ((function() {if ($truthy(node['$attr?']("orientation", "landscape", false))) {
           return " orient=\"land\""
         } else {
-          return nil
+          return ""
         }; return nil; })()) + ">");
         if ($truthy(node['$option?']("unbreakable"))) {
           result['$<<']("<?dbfo keep-together=\"always\"?>")
@@ -498,18 +507,18 @@ if (item == null) item = nil;
           return nil
         }; return nil; })()))) {
           
-          $send($$($nesting, 'TABLE_PI_NAMES'), 'each', [], (TMP_26 = function(pi_name){var self = TMP_26.$$s || this;
+          $send($$($nesting, 'TABLE_PI_NAMES'), 'each', [], (TMP_27 = function(pi_name){var self = TMP_27.$$s || this;
 if (pi_name == null) pi_name = nil;
-          return result['$<<']("" + "<?" + (pi_name) + " table-width=\"" + (width) + "\"?>")}, TMP_26.$$s = self, TMP_26.$$arity = 1, TMP_26));
+          return result['$<<']("" + "<?" + (pi_name) + " table-width=\"" + (width) + "\"?>")}, TMP_27.$$s = self, TMP_27.$$arity = 1, TMP_27));
           return "colabswidth";
         } else {
           return "colpcwidth"
         }; return nil; })();
         result['$<<']("" + "<tgroup cols=\"" + (node.$attr("colcount")) + "\">");
-        $send(node.$columns(), 'each', [], (TMP_27 = function(col){var self = TMP_27.$$s || this;
+        $send(node.$columns(), 'each', [], (TMP_28 = function(col){var self = TMP_28.$$s || this;
 if (col == null) col = nil;
-        return result['$<<']("" + "<colspec colname=\"col_" + (col.$attr("colnumber")) + "\" colwidth=\"" + (col.$attr(col_width_key)) + "*\"/>")}, TMP_27.$$s = self, TMP_27.$$arity = 1, TMP_27));
-        $send(node.$rows().$by_section(), 'each', [], (TMP_28 = function(tsec, rows){var self = TMP_28.$$s || this, TMP_29;
+        return result['$<<']("" + "<colspec colname=\"col_" + (col.$attr("colnumber")) + "\" colwidth=\"" + (col.$attr(col_width_key)) + "*\"/>")}, TMP_28.$$s = self, TMP_28.$$arity = 1, TMP_28));
+        $send(node.$rows().$by_section(), 'each', [], (TMP_29 = function(tsec, rows){var self = TMP_29.$$s || this, TMP_30;
 if (tsec == null) tsec = nil;if (rows == null) rows = nil;
         
           if ($truthy(rows['$empty?']())) {
@@ -517,32 +526,32 @@ if (tsec == null) tsec = nil;if (rows == null) rows = nil;
           if (tsec['$==']("body")) {
             has_body = true};
           result['$<<']("" + "<t" + (tsec) + ">");
-          $send(rows, 'each', [], (TMP_29 = function(row){var self = TMP_29.$$s || this, TMP_30;
+          $send(rows, 'each', [], (TMP_30 = function(row){var self = TMP_30.$$s || this, TMP_31;
 if (row == null) row = nil;
           
             result['$<<']("<row>");
-            $send(row, 'each', [], (TMP_30 = function(cell){var self = TMP_30.$$s || this, halign_attribute = nil, valign_attribute = nil, colspan_attribute = nil, colnum = nil, rowspan_attribute = nil, entry_start = nil, cell_content = nil, $case = nil, entry_end = nil;
+            $send(row, 'each', [], (TMP_31 = function(cell){var self = TMP_31.$$s || this, halign_attribute = nil, valign_attribute = nil, colspan_attribute = nil, colnum = nil, rowspan_attribute = nil, entry_start = nil, cell_content = nil, $case = nil, entry_end = nil;
 if (cell == null) cell = nil;
             
               halign_attribute = (function() {if ($truthy(cell['$attr?']("halign"))) {
                 return "" + " align=\"" + (cell.$attr("halign")) + "\""
               } else {
-                return nil
+                return ""
               }; return nil; })();
               valign_attribute = (function() {if ($truthy(cell['$attr?']("valign"))) {
                 return "" + " valign=\"" + (cell.$attr("valign")) + "\""
               } else {
-                return nil
+                return ""
               }; return nil; })();
               colspan_attribute = (function() {if ($truthy(cell.$colspan())) {
                 return "" + " namest=\"col_" + ((colnum = cell.$column().$attr("colnumber"))) + "\" nameend=\"col_" + ($rb_minus($rb_plus(colnum, cell.$colspan()), 1)) + "\""
               } else {
-                return nil
+                return ""
               }; return nil; })();
               rowspan_attribute = (function() {if ($truthy(cell.$rowspan())) {
                 return "" + " morerows=\"" + ($rb_minus(cell.$rowspan(), 1)) + "\""
               } else {
-                return nil
+                return ""
               }; return nil; })();
               entry_start = "" + "<entry" + (halign_attribute) + (valign_attribute) + (colspan_attribute) + (rowspan_attribute) + ">";
               if (tsec['$==']("head")) {
@@ -568,21 +577,21 @@ if (cell == null) cell = nil;
               } else {
                 return "</entry>"
               }; return nil; })();
-              return result['$<<']("" + (entry_start) + (cell_content) + (entry_end));}, TMP_30.$$s = self, TMP_30.$$arity = 1, TMP_30));
-            return result['$<<']("</row>");}, TMP_29.$$s = self, TMP_29.$$arity = 1, TMP_29));
-          return result['$<<']("" + "</t" + (tsec) + ">");}, TMP_28.$$s = self, TMP_28.$$arity = 2, TMP_28));
+              return result['$<<']("" + (entry_start) + (cell_content) + (entry_end));}, TMP_31.$$s = self, TMP_31.$$arity = 1, TMP_31));
+            return result['$<<']("</row>");}, TMP_30.$$s = self, TMP_30.$$arity = 1, TMP_30));
+          return result['$<<']("" + "</t" + (tsec) + ">");}, TMP_29.$$s = self, TMP_29.$$arity = 2, TMP_29));
         result['$<<']("</tgroup>");
         result['$<<']("" + "</" + (tag_name) + ">");
         if ($truthy(has_body)) {
         } else {
-          self.$warn("asciidoctor: WARNING: tables must have at least one body row")
+          self.$logger().$warn("tables must have at least one body row")
         };
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_table_31.$$arity = 1);
+      }, TMP_DocBook5Converter_table_32.$$arity = 1);
       Opal.alias(self, "toc", "skip");
       
-      Opal.def(self, '$ulist', TMP_DocBook5Converter_ulist_34 = function $$ulist(node) {
-        var TMP_32, TMP_33, self = this, result = nil, mark_type = nil, checklist = nil, mark_attribute = nil;
+      Opal.def(self, '$ulist', TMP_DocBook5Converter_ulist_35 = function $$ulist(node) {
+        var TMP_33, TMP_34, self = this, result = nil, mark_type = nil, checklist = nil, mark_attribute = nil;
 
         
         result = [];
@@ -591,14 +600,14 @@ if (cell == null) cell = nil;
           result['$<<']("" + "<bibliodiv" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">");
           if ($truthy(node['$title?']())) {
             result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
-          $send(node.$items(), 'each', [], (TMP_32 = function(item){var self = TMP_32.$$s || this;
+          $send(node.$items(), 'each', [], (TMP_33 = function(item){var self = TMP_33.$$s || this;
 if (item == null) item = nil;
           
             result['$<<']("<bibliomixed>");
             result['$<<']("" + "<bibliomisc>" + (item.$text()) + "</bibliomisc>");
             if ($truthy(item['$blocks?']())) {
               result['$<<'](item.$content())};
-            return result['$<<']("</bibliomixed>");}, TMP_32.$$s = self, TMP_32.$$arity = 1, TMP_32));
+            return result['$<<']("</bibliomixed>");}, TMP_33.$$s = self, TMP_33.$$arity = 1, TMP_33));
           result['$<<']("</bibliodiv>");
         } else {
           
@@ -610,12 +619,12 @@ if (item == null) item = nil;
           mark_attribute = (function() {if ($truthy(mark_type)) {
             return "" + " mark=\"" + (mark_type) + "\""
           } else {
-            return nil
+            return ""
           }; return nil; })();
           result['$<<']("" + "<itemizedlist" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (mark_attribute) + ">");
           if ($truthy(node['$title?']())) {
             result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
-          $send(node.$items(), 'each', [], (TMP_33 = function(item){var self = TMP_33.$$s || this, $a, text_marker = nil;
+          $send(node.$items(), 'each', [], (TMP_34 = function(item){var self = TMP_34.$$s || this, $a, text_marker = nil;
 if (item == null) item = nil;
           
             text_marker = (function() {if ($truthy(($truthy($a = checklist) ? item['$attr?']("checkbox") : $a))) {
@@ -625,41 +634,28 @@ if (item == null) item = nil;
                 return "&#10063; "
               }
             } else {
-              return nil
+              return ""
             }; return nil; })();
             result['$<<']("<listitem>");
             result['$<<']("" + "<simpara>" + (text_marker) + (item.$text()) + "</simpara>");
             if ($truthy(item['$blocks?']())) {
               result['$<<'](item.$content())};
-            return result['$<<']("</listitem>");}, TMP_33.$$s = self, TMP_33.$$arity = 1, TMP_33));
+            return result['$<<']("</listitem>");}, TMP_34.$$s = self, TMP_34.$$arity = 1, TMP_34));
           result['$<<']("</itemizedlist>");
         };
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_ulist_34.$$arity = 1);
+      }, TMP_DocBook5Converter_ulist_35.$$arity = 1);
       
-      Opal.def(self, '$verse', TMP_DocBook5Converter_verse_35 = function $$verse(node) {
-        var $a, self = this, result = nil;
+      Opal.def(self, '$verse', TMP_DocBook5Converter_verse_37 = function $$verse(node) {
+        var $a, TMP_36, self = this;
 
-        
-        result = [];
-        result['$<<']("" + "<blockquote" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">");
-        if ($truthy(node['$title?']())) {
-          result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
-        if ($truthy(($truthy($a = node['$attr?']("attribution")) ? $a : node['$attr?']("citetitle")))) {
-          
-          result['$<<']("<attribution>");
-          if ($truthy(node['$attr?']("attribution"))) {
-            result['$<<'](node.$attr("attribution"))};
-          if ($truthy(node['$attr?']("citetitle"))) {
-            result['$<<']("" + "<citetitle>" + (node.$attr("citetitle")) + "</citetitle>")};
-          result['$<<']("</attribution>");};
-        result['$<<']("" + "<literallayout>" + (node.$content()) + "</literallayout>");
-        result['$<<']("</blockquote>");
-        return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_verse_35.$$arity = 1);
+        return $send(self, 'blockquote_tag', [node, ($truthy($a = node['$has_role?']("epigraph")) ? "epigraph" : $a)], (TMP_36 = function(){var self = TMP_36.$$s || this;
+
+        return "" + "<literallayout>" + (node.$content()) + "</literallayout>"}, TMP_36.$$s = self, TMP_36.$$arity = 0, TMP_36))
+      }, TMP_DocBook5Converter_verse_37.$$arity = 1);
       Opal.alias(self, "video", "skip");
       
-      Opal.def(self, '$inline_anchor', TMP_DocBook5Converter_inline_anchor_36 = function $$inline_anchor(node) {
+      Opal.def(self, '$inline_anchor', TMP_DocBook5Converter_inline_anchor_38 = function $$inline_anchor(node) {
         var $a, self = this, $case = nil, id = nil, path = nil, linkend = nil, text = nil;
 
         return (function() {$case = node.$type();
@@ -677,28 +673,30 @@ if (item == null) item = nil;
         }}
         else if ("link"['$===']($case)) {return "" + "<link xl:href=\"" + (node.$target()) + "\">" + (node.$text()) + "</link>"}
         else if ("bibref"['$===']($case)) {return "" + "<anchor" + (self.$common_attributes(node.$id(), nil, (text = node.$text()))) + "/>" + (text)}
-        else {return self.$warn("" + "asciidoctor: WARNING: unknown anchor type: " + (node.$type().$inspect()))}})()
-      }, TMP_DocBook5Converter_inline_anchor_36.$$arity = 1);
+        else {
+        self.$logger().$warn("" + "unknown anchor type: " + (node.$type().$inspect()));
+        return nil;}})()
+      }, TMP_DocBook5Converter_inline_anchor_38.$$arity = 1);
       
-      Opal.def(self, '$inline_break', TMP_DocBook5Converter_inline_break_37 = function $$inline_break(node) {
+      Opal.def(self, '$inline_break', TMP_DocBook5Converter_inline_break_39 = function $$inline_break(node) {
         var self = this;
 
         return "" + (node.$text()) + "<?asciidoc-br?>"
-      }, TMP_DocBook5Converter_inline_break_37.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_break_39.$$arity = 1);
       
-      Opal.def(self, '$inline_button', TMP_DocBook5Converter_inline_button_38 = function $$inline_button(node) {
+      Opal.def(self, '$inline_button', TMP_DocBook5Converter_inline_button_40 = function $$inline_button(node) {
         var self = this;
 
         return "" + "<guibutton>" + (node.$text()) + "</guibutton>"
-      }, TMP_DocBook5Converter_inline_button_38.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_button_40.$$arity = 1);
       
-      Opal.def(self, '$inline_callout', TMP_DocBook5Converter_inline_callout_39 = function $$inline_callout(node) {
+      Opal.def(self, '$inline_callout', TMP_DocBook5Converter_inline_callout_41 = function $$inline_callout(node) {
         var self = this;
 
         return "" + "<co" + (self.$common_attributes(node.$id())) + "/>"
-      }, TMP_DocBook5Converter_inline_callout_39.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_callout_41.$$arity = 1);
       
-      Opal.def(self, '$inline_footnote', TMP_DocBook5Converter_inline_footnote_40 = function $$inline_footnote(node) {
+      Opal.def(self, '$inline_footnote', TMP_DocBook5Converter_inline_footnote_42 = function $$inline_footnote(node) {
         var self = this;
 
         if (node.$type()['$==']("xref")) {
@@ -706,21 +704,21 @@ if (item == null) item = nil;
         } else {
           return "" + "<footnote" + (self.$common_attributes(node.$id())) + "><simpara>" + (node.$text()) + "</simpara></footnote>"
         }
-      }, TMP_DocBook5Converter_inline_footnote_40.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_footnote_42.$$arity = 1);
       
-      Opal.def(self, '$inline_image', TMP_DocBook5Converter_inline_image_41 = function $$inline_image(node) {
+      Opal.def(self, '$inline_image', TMP_DocBook5Converter_inline_image_43 = function $$inline_image(node) {
         var self = this, width_attribute = nil, depth_attribute = nil;
 
         
         width_attribute = (function() {if ($truthy(node['$attr?']("width"))) {
           return "" + " contentwidth=\"" + (node.$attr("width")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         depth_attribute = (function() {if ($truthy(node['$attr?']("height"))) {
           return "" + " contentdepth=\"" + (node.$attr("height")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         return "" + "<inlinemediaobject>\n" + "<imageobject>\n" + "<imagedata fileref=\"" + ((function() {if (node.$type()['$==']("icon")) {
           
@@ -729,9 +727,9 @@ if (item == null) item = nil;
           
           return node.$image_uri(node.$target());
         }; return nil; })()) + "\"" + (width_attribute) + (depth_attribute) + "/>\n" + "</imageobject>\n" + "<textobject><phrase>" + (node.$alt()) + "</phrase></textobject>\n" + "</inlinemediaobject>";
-      }, TMP_DocBook5Converter_inline_image_41.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_image_43.$$arity = 1);
       
-      Opal.def(self, '$inline_indexterm', TMP_DocBook5Converter_inline_indexterm_42 = function $$inline_indexterm(node) {
+      Opal.def(self, '$inline_indexterm', TMP_DocBook5Converter_inline_indexterm_44 = function $$inline_indexterm(node) {
         var self = this, terms = nil, result = nil, numterms = nil;
 
         if (node.$type()['$==']("visible")) {
@@ -747,9 +745,9 @@ if (item == null) item = nil;
           result['$<<']("" + "<indexterm>\n" + "<primary>" + (terms['$[]'](-1)) + "</primary>\n" + "</indexterm>");
           return $rb_times(result, $$($nesting, 'LF'));
         }
-      }, TMP_DocBook5Converter_inline_indexterm_42.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_indexterm_44.$$arity = 1);
       
-      Opal.def(self, '$inline_kbd', TMP_DocBook5Converter_inline_kbd_43 = function $$inline_kbd(node) {
+      Opal.def(self, '$inline_kbd', TMP_DocBook5Converter_inline_kbd_45 = function $$inline_kbd(node) {
         var self = this, keys = nil;
 
         if ((keys = node.$attr("keys")).$size()['$=='](1)) {
@@ -757,9 +755,9 @@ if (item == null) item = nil;
         } else {
           return "" + "<keycombo><keycap>" + ($rb_times(keys, "</keycap><keycap>")) + "</keycap></keycombo>"
         }
-      }, TMP_DocBook5Converter_inline_kbd_43.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_kbd_45.$$arity = 1);
       
-      Opal.def(self, '$inline_menu', TMP_DocBook5Converter_inline_menu_44 = function $$inline_menu(node) {
+      Opal.def(self, '$inline_menu', TMP_DocBook5Converter_inline_menu_46 = function $$inline_menu(node) {
         var self = this, menu = nil, submenus = nil, menuitem = nil;
 
         
@@ -773,22 +771,21 @@ if (item == null) item = nil;
         } else {
           return "" + "<menuchoice><guimenu>" + (menu) + "</guimenu> <guisubmenu>" + ($rb_times(submenus, "</guisubmenu> <guisubmenu>")) + "</guisubmenu> <guimenuitem>" + (node.$attr("menuitem")) + "</guimenuitem></menuchoice>"
         };
-      }, TMP_DocBook5Converter_inline_menu_44.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_menu_46.$$arity = 1);
       
       $writer = [["", "", true]];
-      $send(Opal.const_set($nesting[0], 'QUOTE_TAGS', $hash2(["monospaced", "emphasis", "strong", "double", "single", "mark", "superscript", "subscript"], {"monospaced": ["<literal>", "</literal>", false], "emphasis": ["<emphasis>", "</emphasis>", true], "strong": ["<emphasis role=\"strong\">", "</emphasis>", true], "double": ["&#8220;", "&#8221;", true], "single": ["&#8216;", "&#8217;", true], "mark": ["<emphasis role=\"marked\">", "</emphasis>", false], "superscript": ["<superscript>", "</superscript>", false], "subscript": ["<subscript>", "</subscript>", false]})), 'default=', Opal.to_a($writer));
+      $send(Opal.const_set($nesting[0], 'QUOTE_TAGS', $hash2(["monospaced", "emphasis", "strong", "double", "single", "mark", "superscript", "subscript"], {"monospaced": ["<literal>", "</literal>", false], "emphasis": ["<emphasis>", "</emphasis>", true], "strong": ["<emphasis role=\"strong\">", "</emphasis>", true], "double": ["<quote>", "</quote>", true], "single": ["<quote>", "</quote>", true], "mark": ["<emphasis role=\"marked\">", "</emphasis>", false], "superscript": ["<superscript>", "</superscript>", false], "subscript": ["<subscript>", "</subscript>", false]})), 'default=', Opal.to_a($writer));
       $writer[$rb_minus($writer["length"], 1)];;
       
-      Opal.def(self, '$inline_quoted', TMP_DocBook5Converter_inline_quoted_45 = function $$inline_quoted(node) {
-        var $a, $b, $c, $d, self = this, type = nil, equation = nil, open = nil, close = nil, supports_phrase = nil, text = nil, quoted_text = nil;
+      Opal.def(self, '$inline_quoted', TMP_DocBook5Converter_inline_quoted_47 = function $$inline_quoted(node) {
+        var $a, $b, $c, self = this, type = nil, equation = nil, open = nil, close = nil, supports_phrase = nil, text = nil, quoted_text = nil;
 
         if ((type = node.$type())['$==']("asciimath")) {
-          if ($truthy(($truthy($a = (($b = $$$('::', 'AsciiMath', 'skip_raise')) ? 'constant' : nil)) ? $a : (function() {if ($truthy((($c = self['asciimath_available'], $c != null && $c !== nil) ? 'instance-variable' : nil))) {
-            return self.asciimath_available
+          if ((self.asciimath = ($truthy($a = self.asciimath) ? $a : (function() {if ($truthy(($truthy($b = (($c = $$$('::', 'AsciiMath', 'skip_raise')) ? 'constant' : nil)) ? $b : $$($nesting, 'Helpers').$require_library("asciimath", true, "warn"))['$nil?']())) {
+            return "unavailable"
           } else {
-            
-            return (self.asciimath_available = $$($nesting, 'Helpers').$require_library("asciimath", true, "warn"));
-          }; return nil; })()))) {
+            return "loaded"
+          }; return nil; })()))['$==']("loaded")) {
             return "" + "<inlineequation>" + ($$$('::', 'AsciiMath').$parse(node.$text()).$to_mathml("mml:", $hash2(["xmlns:mml"], {"xmlns:mml": "http://www.w3.org/1998/Math/MathML"}))) + "</inlineequation>"
           } else {
             return "" + "<inlineequation><mathphrase><![CDATA[" + (node.$text()) + "]]></mathphrase></inlineequation>"
@@ -797,7 +794,7 @@ if (item == null) item = nil;
           return "" + "<inlineequation><alt><![CDATA[" + ((equation = node.$text())) + "]]></alt><mathphrase><![CDATA[" + (equation) + "]]></mathphrase></inlineequation>"
         } else {
           
-          $d = $$($nesting, 'QUOTE_TAGS')['$[]'](type), $a = Opal.to_ary($d), (open = ($a[0] == null ? nil : $a[0])), (close = ($a[1] == null ? nil : $a[1])), (supports_phrase = ($a[2] == null ? nil : $a[2])), $d;
+          $b = $$($nesting, 'QUOTE_TAGS')['$[]'](type), $a = Opal.to_ary($b), (open = ($a[0] == null ? nil : $a[0])), (close = ($a[1] == null ? nil : $a[1])), (supports_phrase = ($a[2] == null ? nil : $a[2])), $b;
           text = node.$text();
           if ($truthy(node.$role())) {
             if ($truthy(supports_phrase)) {
@@ -814,9 +811,42 @@ if (item == null) item = nil;
             return quoted_text
           };
         }
-      }, TMP_DocBook5Converter_inline_quoted_45.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_quoted_47.$$arity = 1);
       
-      Opal.def(self, '$author_element', TMP_DocBook5Converter_author_element_46 = function $$author_element(doc, index) {
+      Opal.def(self, '$common_attributes', TMP_DocBook5Converter_common_attributes_48 = function $$common_attributes(id, role, reftext) {
+        var $a, self = this, attrs = nil;
+
+        if (role == null) {
+          role = nil;
+        }
+        if (reftext == null) {
+          reftext = nil;
+        }
+        
+        attrs = (function() {if ($truthy(id)) {
+          return "" + " xml:id=\"" + (id) + "\""
+        } else {
+          return ""
+        }; return nil; })();
+        if ($truthy(role)) {
+          attrs = "" + (attrs) + " role=\"" + (role) + "\""};
+        if ($truthy(reftext)) {
+          
+          if ($truthy(($truthy($a = reftext['$include?']("<")) ? (reftext = reftext.$gsub($$($nesting, 'XmlSanitizeRx'), ""))['$include?'](" ") : $a))) {
+            reftext = reftext.$squeeze(" ").$strip()};
+          if ($truthy(reftext['$include?']("\""))) {
+            reftext = reftext.$gsub("\"", "&quot;")};
+          attrs = "" + (attrs) + " xreflabel=\"" + (reftext) + "\"";};
+        return attrs;
+      }, TMP_DocBook5Converter_common_attributes_48.$$arity = -2);
+      
+      Opal.def(self, '$doctype_declaration', TMP_DocBook5Converter_doctype_declaration_49 = function $$doctype_declaration(root_tag_name) {
+        var self = this;
+
+        return nil
+      }, TMP_DocBook5Converter_doctype_declaration_49.$$arity = 1);
+      
+      Opal.def(self, '$author_tag', TMP_DocBook5Converter_author_tag_50 = function $$author_tag(doc, index) {
         var self = this, firstname_key = nil, middlename_key = nil, lastname_key = nil, email_key = nil, result = nil;
 
         if (index == null) {
@@ -857,43 +887,10 @@ if (item == null) item = nil;
           result['$<<']("" + "<email>" + (doc.$attr(email_key)) + "</email>")};
         result['$<<']("</author>");
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_author_element_46.$$arity = -2);
+      }, TMP_DocBook5Converter_author_tag_50.$$arity = -2);
       
-      Opal.def(self, '$common_attributes', TMP_DocBook5Converter_common_attributes_47 = function $$common_attributes(id, role, reftext) {
-        var $a, self = this, attrs = nil;
-
-        if (role == null) {
-          role = nil;
-        }
-        if (reftext == null) {
-          reftext = nil;
-        }
-        
-        attrs = (function() {if ($truthy(id)) {
-          return "" + " xml:id=\"" + (id) + "\""
-        } else {
-          return ""
-        }; return nil; })();
-        if ($truthy(role)) {
-          attrs = "" + (attrs) + " role=\"" + (role) + "\""};
-        if ($truthy(reftext)) {
-          
-          if ($truthy(($truthy($a = reftext['$include?']("<")) ? (reftext = reftext.$gsub($$($nesting, 'XmlSanitizeRx'), ""))['$include?'](" ") : $a))) {
-            reftext = reftext.$squeeze(" ").$strip()};
-          if ($truthy(reftext['$include?']("\""))) {
-            reftext = reftext.$gsub("\"", "&quot;")};
-          attrs = "" + (attrs) + " xreflabel=\"" + (reftext) + "\"";};
-        return attrs;
-      }, TMP_DocBook5Converter_common_attributes_47.$$arity = -2);
-      
-      Opal.def(self, '$doctype_declaration', TMP_DocBook5Converter_doctype_declaration_48 = function $$doctype_declaration(root_tag_name) {
-        var self = this;
-
-        return nil
-      }, TMP_DocBook5Converter_doctype_declaration_48.$$arity = 1);
-      
-      Opal.def(self, '$document_info_element', TMP_DocBook5Converter_document_info_element_50 = function $$document_info_element(doc, info_tag_prefix, use_info_tag_prefix) {
-        var TMP_49, $a, $b, self = this, result = nil, date = nil, authorcount = nil, back_cover_tag = nil, front_cover_tag = nil, head_docinfo = nil;
+      Opal.def(self, '$document_info_tag', TMP_DocBook5Converter_document_info_tag_53 = function $$document_info_tag(doc, info_tag_prefix, use_info_tag_prefix) {
+        var $a, TMP_51, $b, TMP_52, self = this, result = nil, date = nil, authorcount = nil, back_cover_tag = nil, front_cover_tag = nil, head_docinfo = nil;
 
         if (use_info_tag_prefix == null) {
           use_info_tag_prefix = false;
@@ -901,7 +898,7 @@ if (item == null) item = nil;
         
         if ($truthy(use_info_tag_prefix)) {
         } else {
-          info_tag_prefix = nil
+          info_tag_prefix = ""
         };
         result = [];
         result['$<<']("" + "<" + (info_tag_prefix) + "info>");
@@ -922,20 +919,28 @@ if (item == null) item = nil;
           };
         }; return nil; })()))) {
           result['$<<']("" + "<date>" + (date) + "</date>")};
+        if ($truthy(doc['$attr?']("copyright"))) {
+          
+          $$($nesting, 'CopyrightRx')['$=~'](doc.$attr("copyright"));
+          result['$<<']("<copyright>");
+          result['$<<']("" + "<holder>" + ((($a = $gvars['~']) === nil ? nil : $a['$[]'](1))) + "</holder>");
+          if ($truthy((($a = $gvars['~']) === nil ? nil : $a['$[]'](2)))) {
+            result['$<<']("" + "<year>" + ((($a = $gvars['~']) === nil ? nil : $a['$[]'](2))) + "</year>")};
+          result['$<<']("</copyright>");};
         if ($truthy(doc['$has_header?']())) {
           
           if ($truthy(doc['$attr?']("author"))) {
             if ($truthy($rb_lt((authorcount = doc.$attr("authorcount").$to_i()), 2))) {
               
-              result['$<<'](self.$author_element(doc));
+              result['$<<'](self.$author_tag(doc));
               if ($truthy(doc['$attr?']("authorinitials"))) {
                 result['$<<']("" + "<authorinitials>" + (doc.$attr("authorinitials")) + "</authorinitials>")};
             } else {
               
               result['$<<']("<authorgroup>");
-              $send(authorcount, 'times', [], (TMP_49 = function(index){var self = TMP_49.$$s || this;
+              $send(authorcount, 'times', [], (TMP_51 = function(index){var self = TMP_51.$$s || this;
 if (index == null) index = nil;
-              return result['$<<'](self.$author_element(doc, $rb_plus(index, 1)))}, TMP_49.$$s = self, TMP_49.$$arity = 1, TMP_49));
+              return result['$<<'](self.$author_tag(doc, $rb_plus(index, 1)))}, TMP_51.$$s = self, TMP_51.$$arity = 1, TMP_51));
               result['$<<']("</authorgroup>");
             }};
           if ($truthy(($truthy($a = doc['$attr?']("revdate")) ? ($truthy($b = doc['$attr?']("revnumber")) ? $b : doc['$attr?']("revremark")) : $a))) {
@@ -972,29 +977,33 @@ if (index == null) index = nil;
             result['$<<']("" + "<refentrytitle>" + (doc.$attr("mantitle")) + "</refentrytitle>")};
           if ($truthy(doc['$attr?']("manvolnum"))) {
             result['$<<']("" + "<manvolnum>" + (doc.$attr("manvolnum")) + "</manvolnum>")};
+          result['$<<']("" + "<refmiscinfo class=\"source\">" + (doc.$attr("mansource", "&#160;")) + "</refmiscinfo>");
+          result['$<<']("" + "<refmiscinfo class=\"manual\">" + (doc.$attr("manmanual", "&#160;")) + "</refmiscinfo>");
           result['$<<']("</refmeta>");
           result['$<<']("<refnamediv>");
-          if ($truthy(doc['$attr?']("manname"))) {
-            result['$<<']("" + "<refname>" + (doc.$attr("manname")) + "</refname>")};
+          if ($truthy(doc['$attr?']("mannames"))) {
+            result = $rb_plus(result, $send(doc.$attr("mannames"), 'map', [], (TMP_52 = function(n){var self = TMP_52.$$s || this;
+if (n == null) n = nil;
+            return "" + "<refname>" + (n) + "</refname>"}, TMP_52.$$s = self, TMP_52.$$arity = 1, TMP_52)))};
           if ($truthy(doc['$attr?']("manpurpose"))) {
             result['$<<']("" + "<refpurpose>" + (doc.$attr("manpurpose")) + "</refpurpose>")};
           result['$<<']("</refnamediv>");};
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_document_info_element_50.$$arity = -3);
+      }, TMP_DocBook5Converter_document_info_tag_53.$$arity = -3);
       
-      Opal.def(self, '$document_ns_attributes', TMP_DocBook5Converter_document_ns_attributes_51 = function $$document_ns_attributes(doc) {
+      Opal.def(self, '$document_ns_attributes', TMP_DocBook5Converter_document_ns_attributes_54 = function $$document_ns_attributes(doc) {
         var self = this;
 
         return " xmlns=\"http://docbook.org/ns/docbook\" xmlns:xl=\"http://www.w3.org/1999/xlink\" version=\"5.0\""
-      }, TMP_DocBook5Converter_document_ns_attributes_51.$$arity = 1);
+      }, TMP_DocBook5Converter_document_ns_attributes_54.$$arity = 1);
       
-      Opal.def(self, '$lang_attribute_name', TMP_DocBook5Converter_lang_attribute_name_52 = function $$lang_attribute_name() {
+      Opal.def(self, '$lang_attribute_name', TMP_DocBook5Converter_lang_attribute_name_55 = function $$lang_attribute_name() {
         var self = this;
 
         return "xml:lang"
-      }, TMP_DocBook5Converter_lang_attribute_name_52.$$arity = 0);
+      }, TMP_DocBook5Converter_lang_attribute_name_55.$$arity = 0);
       
-      Opal.def(self, '$document_title_tags', TMP_DocBook5Converter_document_title_tags_53 = function $$document_title_tags(title) {
+      Opal.def(self, '$document_title_tags', TMP_DocBook5Converter_document_title_tags_56 = function $$document_title_tags(title) {
         var self = this;
 
         if ($truthy(title['$subtitle?']())) {
@@ -1002,9 +1011,9 @@ if (index == null) index = nil;
         } else {
           return "" + "<title>" + (title) + "</title>"
         }
-      }, TMP_DocBook5Converter_document_title_tags_53.$$arity = 1);
+      }, TMP_DocBook5Converter_document_title_tags_56.$$arity = 1);
       
-      Opal.def(self, '$resolve_content', TMP_DocBook5Converter_resolve_content_54 = function $$resolve_content(node) {
+      Opal.def(self, '$resolve_content', TMP_DocBook5Converter_resolve_content_57 = function $$resolve_content(node) {
         var self = this;
 
         if (node.$content_model()['$==']("compound")) {
@@ -1012,9 +1021,9 @@ if (index == null) index = nil;
         } else {
           return "" + "<simpara>" + (node.$content()) + "</simpara>"
         }
-      }, TMP_DocBook5Converter_resolve_content_54.$$arity = 1);
+      }, TMP_DocBook5Converter_resolve_content_57.$$arity = 1);
       
-      Opal.def(self, '$title_tag', TMP_DocBook5Converter_title_tag_55 = function $$title_tag(node, optional) {
+      Opal.def(self, '$title_tag', TMP_DocBook5Converter_title_tag_58 = function $$title_tag(node, optional) {
         var $a, self = this;
 
         if (optional == null) {
@@ -1023,10 +1032,11 @@ if (index == null) index = nil;
         if ($truthy(($truthy($a = optional['$!']()) ? $a : node['$title?']()))) {
           return "" + "<title>" + (node.$title()) + "</title>\n"
         } else {
-          return nil
+          return ""
         }
-      }, TMP_DocBook5Converter_title_tag_55.$$arity = -2);
-      return (Opal.def(self, '$cover_tag', TMP_DocBook5Converter_cover_tag_56 = function $$cover_tag(doc, face, use_placeholder) {
+      }, TMP_DocBook5Converter_title_tag_58.$$arity = -2);
+      
+      Opal.def(self, '$cover_tag', TMP_DocBook5Converter_cover_tag_59 = function $$cover_tag(doc, face, use_placeholder) {
         var $a, self = this, cover_image = nil, width_attr = nil, depth_attr = nil, attrs = nil;
 
         if (use_placeholder == null) {
@@ -1034,8 +1044,8 @@ if (index == null) index = nil;
         }
         if ($truthy((cover_image = doc.$attr("" + (face) + "-cover-image")))) {
           
-          width_attr = nil;
-          depth_attr = nil;
+          width_attr = "";
+          depth_attr = "";
           if ($truthy(($truthy($a = cover_image['$include?'](":")) ? $$($nesting, 'ImageMacroRx')['$=~'](cover_image) : $a))) {
             
             cover_image = doc.$image_uri((($a = $gvars['~']) === nil ? nil : $a['$[]'](1)));
@@ -1059,7 +1069,35 @@ if (index == null) index = nil;
         } else {
           return nil
         }
-      }, TMP_DocBook5Converter_cover_tag_56.$$arity = -3), nil) && 'cover_tag';
+      }, TMP_DocBook5Converter_cover_tag_59.$$arity = -3);
+      return (Opal.def(self, '$blockquote_tag', TMP_DocBook5Converter_blockquote_tag_60 = function $$blockquote_tag(node, tag_name) {
+        var $a, self = this, $iter = TMP_DocBook5Converter_blockquote_tag_60.$$p, $yield = $iter || nil, start_tag = nil, end_tag = nil, result = nil;
+
+        if (tag_name == null) {
+          tag_name = nil;
+        }
+        if ($iter) TMP_DocBook5Converter_blockquote_tag_60.$$p = null;
+        
+        if ($truthy(tag_name)) {
+          $a = ["" + "<" + (tag_name), "" + "</" + (tag_name) + ">"], (start_tag = $a[0]), (end_tag = $a[1]), $a
+        } else {
+          $a = ["<blockquote", "</blockquote>"], (start_tag = $a[0]), (end_tag = $a[1]), $a
+        };
+        result = ["" + (start_tag) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">"];
+        if ($truthy(node['$title?']())) {
+          result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
+        if ($truthy(($truthy($a = node['$attr?']("attribution")) ? $a : node['$attr?']("citetitle")))) {
+          
+          result['$<<']("<attribution>");
+          if ($truthy(node['$attr?']("attribution"))) {
+            result['$<<'](node.$attr("attribution"))};
+          if ($truthy(node['$attr?']("citetitle"))) {
+            result['$<<']("" + "<citetitle>" + (node.$attr("citetitle")) + "</citetitle>")};
+          result['$<<']("</attribution>");};
+        result['$<<'](Opal.yieldX($yield, []));
+        result['$<<'](end_tag);
+        return $rb_times(result, $$($nesting, 'LF'));
+      }, TMP_DocBook5Converter_blockquote_tag_60.$$arity = -2), nil) && 'blockquote_tag';
     })($$($nesting, 'Converter'), $$$($$($nesting, 'Converter'), 'BuiltIn'), $nesting)
   })($nesting[0], $nesting)
 };
@@ -1075,15 +1113,16 @@ if (index == null) index = nil;
   
   self.$require("asciidoctor/converter/docbook5");
   return (function($base, $parent_nesting) {
-    var $Asciidoctor, self = $Asciidoctor = $module($base, 'Asciidoctor');
+    function $Asciidoctor() {};
+    var self = $Asciidoctor = $module($base, 'Asciidoctor', $Asciidoctor);
 
-    var def = self.$$proto, $nesting = [self].concat($parent_nesting);
+    var def = self.prototype, $nesting = [self].concat($parent_nesting);
 
     (function($base, $super, $parent_nesting) {
       function $DocBook45Converter(){};
       var self = $DocBook45Converter = $klass($base, $super, 'DocBook45Converter', $DocBook45Converter);
 
-      var def = self.$$proto, $nesting = [self].concat($parent_nesting), TMP_DocBook45Converter_admonition_1, TMP_DocBook45Converter_olist_3, TMP_DocBook45Converter_inline_anchor_4, TMP_DocBook45Converter_author_element_5, TMP_DocBook45Converter_common_attributes_6, TMP_DocBook45Converter_doctype_declaration_7, TMP_DocBook45Converter_document_info_element_8, TMP_DocBook45Converter_lang_attribute_name_9, TMP_DocBook45Converter_document_ns_attributes_10;
+      var def = self.prototype, $nesting = [self].concat($parent_nesting), TMP_DocBook45Converter_admonition_1, TMP_DocBook45Converter_olist_3, TMP_DocBook45Converter_inline_anchor_4, TMP_DocBook45Converter_author_tag_5, TMP_DocBook45Converter_common_attributes_6, TMP_DocBook45Converter_doctype_declaration_7, TMP_DocBook45Converter_document_info_tag_8, TMP_DocBook45Converter_lang_attribute_name_9, TMP_DocBook45Converter_document_ns_attributes_10;
 
       
       
@@ -1110,12 +1149,12 @@ if (index == null) index = nil;
         num_attribute = (function() {if ($truthy(node.$style())) {
           return "" + " numeration=\"" + (node.$style()) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         start_attribute = (function() {if ($truthy(node['$attr?']("start"))) {
           return "" + " override=\"" + (node.$attr("start")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         result['$<<']("" + "<orderedlist" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (num_attribute) + ">");
         if ($truthy(node['$title?']())) {
@@ -1159,33 +1198,26 @@ if (item == null) item = nil;if (idx == null) idx = nil;
         else { return nil }})()
       }, TMP_DocBook45Converter_inline_anchor_4.$$arity = 1);
       
-      Opal.def(self, '$author_element', TMP_DocBook45Converter_author_element_5 = function $$author_element(doc, index) {
+      Opal.def(self, '$author_tag', TMP_DocBook45Converter_author_tag_5 = function $$author_tag(doc, index) {
         var self = this, firstname_key = nil, middlename_key = nil, lastname_key = nil, email_key = nil, result = nil;
 
         if (index == null) {
           index = nil;
         }
         
-        firstname_key = (function() {if ($truthy(index)) {
-          return "" + "firstname_" + (index)
+        if ($truthy(index)) {
+          
+          firstname_key = "" + "firstname_" + (index);
+          middlename_key = "" + "middlename_" + (index);
+          lastname_key = "" + "lastname_" + (index);
+          email_key = "" + "email_" + (index);
         } else {
-          return "firstname"
-        }; return nil; })();
-        middlename_key = (function() {if ($truthy(index)) {
-          return "" + "middlename_" + (index)
-        } else {
-          return "middlename"
-        }; return nil; })();
-        lastname_key = (function() {if ($truthy(index)) {
-          return "" + "lastname_" + (index)
-        } else {
-          return "lastname"
-        }; return nil; })();
-        email_key = (function() {if ($truthy(index)) {
-          return "" + "email_" + (index)
-        } else {
-          return "email"
-        }; return nil; })();
+          
+          firstname_key = "firstname";
+          middlename_key = "middlename";
+          lastname_key = "lastname";
+          email_key = "email";
+        };
         result = [];
         result['$<<']("<author>");
         if ($truthy(doc['$attr?'](firstname_key))) {
@@ -1198,7 +1230,7 @@ if (item == null) item = nil;if (idx == null) idx = nil;
           result['$<<']("" + "<email>" + (doc.$attr(email_key)) + "</email>")};
         result['$<<']("</author>");
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook45Converter_author_element_5.$$arity = -2);
+      }, TMP_DocBook45Converter_author_tag_5.$$arity = -2);
       
       Opal.def(self, '$common_attributes', TMP_DocBook45Converter_common_attributes_6 = function $$common_attributes(id, role, reftext) {
         var self = this, res = nil;
@@ -1228,12 +1260,12 @@ if (item == null) item = nil;if (idx == null) idx = nil;
         return "" + "<!DOCTYPE " + (root_tag_name) + " PUBLIC \"-//OASIS//DTD DocBook XML V4.5//EN\" \"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd\">"
       }, TMP_DocBook45Converter_doctype_declaration_7.$$arity = 1);
       
-      Opal.def(self, '$document_info_element', TMP_DocBook45Converter_document_info_element_8 = function $$document_info_element(doc, info_tag_prefix) {
-        var self = this, $iter = TMP_DocBook45Converter_document_info_element_8.$$p, $yield = $iter || nil;
+      Opal.def(self, '$document_info_tag', TMP_DocBook45Converter_document_info_tag_8 = function $$document_info_tag(doc, info_tag_prefix) {
+        var self = this, $iter = TMP_DocBook45Converter_document_info_tag_8.$$p, $yield = $iter || nil;
 
-        if ($iter) TMP_DocBook45Converter_document_info_element_8.$$p = null;
-        return $send(self, Opal.find_super_dispatcher(self, 'document_info_element', TMP_DocBook45Converter_document_info_element_8, false), [doc, info_tag_prefix, true], null)
-      }, TMP_DocBook45Converter_document_info_element_8.$$arity = 2);
+        if ($iter) TMP_DocBook45Converter_document_info_tag_8.$$p = null;
+        return $send(self, Opal.find_super_dispatcher(self, 'document_info_tag', TMP_DocBook45Converter_document_info_tag_8, false), [doc, info_tag_prefix, true], null)
+      }, TMP_DocBook45Converter_document_info_tag_8.$$arity = 2);
       
       Opal.def(self, '$lang_attribute_name', TMP_DocBook45Converter_lang_attribute_name_9 = function $$lang_attribute_name() {
         var self = this;
@@ -1250,7 +1282,7 @@ if (item == null) item = nil;if (idx == null) idx = nil;
             return "" + " xmlns=\"" + (ns) + "\""
           }
         } else {
-          return nil
+          return ""
         }
       }, TMP_DocBook45Converter_document_ns_attributes_10.$$arity = 1), nil) && 'document_ns_attributes';
     })($$($nesting, 'Converter'), $$$($$($nesting, 'Converter'), 'DocBook5Converter'), $nesting)
@@ -1276,20 +1308,22 @@ if (item == null) item = nil;if (idx == null) idx = nil;
   }
   var self = Opal.top, $nesting = [], nil = Opal.nil, $$$ = Opal.const_get_qualified, $$ = Opal.const_get_relative, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass, $truthy = Opal.truthy, $hash2 = Opal.hash2, $send = Opal.send, $gvars = Opal.gvars;
 
-  Opal.add_stubs(['$==', '$doctype', '$<<', '$doctype_declaration', '$attr?', '$attr', '$lang_attribute_name', '$document_ns_attributes', '$noheader', '$document_info_element', '$blocks?', '$content', '$empty?', '$docinfo', '$*', '$document', '$[]', '$sectname', '$common_attributes', '$id', '$role', '$reftext', '$title', '$title_tag', '$resolve_content', '$title?', '$each', '$items', '$text', '$default=', '$-', '$style', '$nil?', '$text?', '$level', '$image_uri', '$alt', '$!', '$index', '$subs', '$delete_at', '$>', '$insert', '$unshift', '$require_library', '$to_mathml', '$parse', '$===', '$parent', '$warn', '$context', '$option?', '$include?', '$columns', '$by_section', '$rows', '$colspan', '$column', '$+', '$rowspan', '$type', '$attributes', '$target', '$inspect', '$icon_uri', '$size', '$chop', '$gsub', '$strip', '$squeeze', '$notitle', '$document_title_tags', '$doctitle', '$has_header?', '$<', '$to_i', '$author_element', '$times', '$cover_tag', '$subtitle?', '$main', '$subtitle', '$content_model', '$=~', '$new', '$key?']);
+  Opal.add_stubs(['$==', '$doctype', '$<<', '$doctype_declaration', '$attr?', '$attr', '$lang_attribute_name', '$document_ns_attributes', '$noheader', '$document_info_tag', '$blocks?', '$content', '$empty?', '$docinfo', '$*', '$document', '$[]', '$sectname', '$special', '$option?', '$title', '$common_attributes', '$id', '$role', '$reftext', '$title_tag', '$resolve_content', '$title?', '$each', '$items', '$text', '$default=', '$-', '$style', '$text?', '$level', '$image_uri', '$alt', '$!', '$index', '$subs', '$delete_at', '$>', '$insert', '$unshift', '$nil?', '$require_library', '$to_mathml', '$parse', '$===', '$parent', '$warn', '$logger', '$context', '$error', '$content_model', '$blockquote_tag', '$has_role?', '$include?', '$columns', '$by_section', '$rows', '$colspan', '$column', '$+', '$rowspan', '$type', '$attributes', '$target', '$inspect', '$icon_uri', '$size', '$chop', '$gsub', '$strip', '$squeeze', '$notitle', '$document_title_tags', '$doctitle', '$=~', '$has_header?', '$<', '$to_i', '$author_tag', '$times', '$cover_tag', '$map', '$subtitle?', '$main', '$subtitle', '$new', '$key?']);
   return (function($base, $parent_nesting) {
-    var $Asciidoctor, self = $Asciidoctor = $module($base, 'Asciidoctor');
+    function $Asciidoctor() {};
+    var self = $Asciidoctor = $module($base, 'Asciidoctor', $Asciidoctor);
 
-    var def = self.$$proto, $nesting = [self].concat($parent_nesting);
+    var def = self.prototype, $nesting = [self].concat($parent_nesting);
 
     (function($base, $super, $parent_nesting) {
       function $DocBook5Converter(){};
       var self = $DocBook5Converter = $klass($base, $super, 'DocBook5Converter', $DocBook5Converter);
 
-      var def = self.$$proto, $nesting = [self].concat($parent_nesting), TMP_DocBook5Converter_document_1, TMP_DocBook5Converter_section_2, TMP_DocBook5Converter_admonition_3, TMP_DocBook5Converter_colist_5, TMP_DocBook5Converter_dlist_10, TMP_DocBook5Converter_example_11, TMP_DocBook5Converter_floating_title_12, TMP_DocBook5Converter_image_13, TMP_DocBook5Converter_listing_14, TMP_DocBook5Converter_literal_15, TMP_DocBook5Converter_stem_16, TMP_DocBook5Converter_olist_18, TMP_DocBook5Converter_open_19, TMP_DocBook5Converter_page_break_20, TMP_DocBook5Converter_paragraph_21, TMP_DocBook5Converter_preamble_22, TMP_DocBook5Converter_quote_23, TMP_DocBook5Converter_thematic_break_24, TMP_DocBook5Converter_sidebar_25, TMP_DocBook5Converter_table_31, TMP_DocBook5Converter_ulist_34, TMP_DocBook5Converter_verse_35, TMP_DocBook5Converter_inline_anchor_36, TMP_DocBook5Converter_inline_break_37, TMP_DocBook5Converter_inline_button_38, TMP_DocBook5Converter_inline_callout_39, TMP_DocBook5Converter_inline_footnote_40, TMP_DocBook5Converter_inline_image_41, TMP_DocBook5Converter_inline_indexterm_42, TMP_DocBook5Converter_inline_kbd_43, TMP_DocBook5Converter_inline_menu_44, TMP_DocBook5Converter_inline_quoted_45, TMP_DocBook5Converter_author_element_46, TMP_DocBook5Converter_common_attributes_47, TMP_DocBook5Converter_doctype_declaration_48, TMP_DocBook5Converter_document_info_element_50, TMP_DocBook5Converter_document_ns_attributes_51, TMP_DocBook5Converter_lang_attribute_name_52, TMP_DocBook5Converter_document_title_tags_53, TMP_DocBook5Converter_resolve_content_54, TMP_DocBook5Converter_title_tag_55, TMP_DocBook5Converter_cover_tag_56, $writer = nil;
+      var def = self.prototype, $nesting = [self].concat($parent_nesting), TMP_DocBook5Converter_document_1, TMP_DocBook5Converter_section_2, TMP_DocBook5Converter_admonition_3, TMP_DocBook5Converter_colist_5, TMP_DocBook5Converter_dlist_10, TMP_DocBook5Converter_example_11, TMP_DocBook5Converter_floating_title_12, TMP_DocBook5Converter_image_13, TMP_DocBook5Converter_listing_14, TMP_DocBook5Converter_literal_15, TMP_DocBook5Converter_stem_16, TMP_DocBook5Converter_olist_18, TMP_DocBook5Converter_open_19, TMP_DocBook5Converter_page_break_20, TMP_DocBook5Converter_paragraph_21, TMP_DocBook5Converter_preamble_22, TMP_DocBook5Converter_quote_24, TMP_DocBook5Converter_thematic_break_25, TMP_DocBook5Converter_sidebar_26, TMP_DocBook5Converter_table_32, TMP_DocBook5Converter_ulist_35, TMP_DocBook5Converter_verse_37, TMP_DocBook5Converter_inline_anchor_38, TMP_DocBook5Converter_inline_break_39, TMP_DocBook5Converter_inline_button_40, TMP_DocBook5Converter_inline_callout_41, TMP_DocBook5Converter_inline_footnote_42, TMP_DocBook5Converter_inline_image_43, TMP_DocBook5Converter_inline_indexterm_44, TMP_DocBook5Converter_inline_kbd_45, TMP_DocBook5Converter_inline_menu_46, TMP_DocBook5Converter_inline_quoted_47, TMP_DocBook5Converter_common_attributes_48, TMP_DocBook5Converter_doctype_declaration_49, TMP_DocBook5Converter_author_tag_50, TMP_DocBook5Converter_document_info_tag_53, TMP_DocBook5Converter_document_ns_attributes_54, TMP_DocBook5Converter_lang_attribute_name_55, TMP_DocBook5Converter_document_title_tags_56, TMP_DocBook5Converter_resolve_content_57, TMP_DocBook5Converter_title_tag_58, TMP_DocBook5Converter_cover_tag_59, TMP_DocBook5Converter_blockquote_tag_60, $writer = nil;
 
-      def.asciimath_available = nil;
+      def.asciimath = nil;
       
+      Opal.const_set($nesting[0], 'CopyrightRx', /^(.+?)(?: ((?:\d{4}\-)?\d{4}))?$/);
       Opal.const_set($nesting[0], 'ImageMacroRx', /^image::?(.+?)\[(.*?)\]$/);
       
       Opal.def(self, '$document', TMP_DocBook5Converter_document_1 = function $$document(node) {
@@ -1315,14 +1349,14 @@ if (item == null) item = nil;if (idx == null) idx = nil;
             result['$<<']("<?asciidoc-numbered?>")
           }};
         lang_attribute = (function() {if ($truthy(node['$attr?']("nolang"))) {
-          return nil
+          return ""
         } else {
           return "" + " " + (self.$lang_attribute_name()) + "=\"" + (node.$attr("lang", "en")) + "\""
         }; return nil; })();
         result['$<<']("" + "<" + (root_tag_name) + (self.$document_ns_attributes(node)) + (lang_attribute) + ">");
         if ($truthy(node.$noheader())) {
         } else {
-          result['$<<'](self.$document_info_element(node, root_tag_name))
+          result['$<<'](self.$document_info_tag(node, root_tag_name))
         };
         if ($truthy(node['$blocks?']())) {
           result['$<<'](node.$content())};
@@ -1337,7 +1371,7 @@ if (item == null) item = nil;if (idx == null) idx = nil;
       Opal.const_set($nesting[0], 'MANPAGE_SECTION_TAGS', $hash2(["section", "synopsis"], {"section": "refsection", "synopsis": "refsynopsisdiv"}));
       
       Opal.def(self, '$section', TMP_DocBook5Converter_section_2 = function $$section(node) {
-        var $a, self = this, tag_name = nil;
+        var $a, self = this, tag_name = nil, title_el = nil;
 
         
         if (node.$document().$doctype()['$==']("manpage")) {
@@ -1345,7 +1379,12 @@ if (item == null) item = nil;if (idx == null) idx = nil;
         } else {
           tag_name = node.$sectname()
         };
-        return "" + "<" + (tag_name) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">\n" + "<title>" + (node.$title()) + "</title>\n" + (node.$content()) + "\n" + "</" + (tag_name) + ">";
+        title_el = (function() {if ($truthy(($truthy($a = node.$special()) ? node['$option?']("untitled") : $a))) {
+          return ""
+        } else {
+          return "" + "<title>" + (node.$title()) + "</title>\n"
+        }; return nil; })();
+        return "" + "<" + (tag_name) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">\n" + (title_el) + (node.$content()) + "\n" + "</" + (tag_name) + ">";
       }, TMP_DocBook5Converter_section_2.$$arity = 1);
       
       Opal.def(self, '$admonition', TMP_DocBook5Converter_admonition_3 = function $$admonition(node) {
@@ -1399,14 +1438,12 @@ if (terms == null) terms = nil;if (dd == null) dd = nil;
 if (dt == null) dt = nil;
             return result['$<<']("" + "<simpara>" + (dt.$text()) + "</simpara>")}, TMP_7.$$s = self, TMP_7.$$arity = 1, TMP_7));
             result['$<<']("" + "</entry>\n" + "<entry>");
-            if ($truthy(dd['$nil?']())) {
-            } else {
+            if ($truthy(dd)) {
               
               if ($truthy(dd['$text?']())) {
                 result['$<<']("" + "<simpara>" + (dd.$text()) + "</simpara>")};
               if ($truthy(dd['$blocks?']())) {
-                result['$<<'](dd.$content())};
-            };
+                result['$<<'](dd.$content())};};
             return result['$<<']("" + "</entry>\n" + "</row>");}, TMP_6.$$s = self, TMP_6.$$arity = 2, TMP_6));
           result['$<<']("" + "</tbody>\n" + "</tgroup>\n" + "</" + (tag_name) + ">");
         } else {
@@ -1434,14 +1471,12 @@ if (dt == null) dt = nil;
             if ($truthy(label_tag)) {
               result['$<<']("" + "</" + (label_tag) + ">")};
             result['$<<']("" + "<" + (item_tag) + ">");
-            if ($truthy(dd['$nil?']())) {
-            } else {
+            if ($truthy(dd)) {
               
               if ($truthy(dd['$text?']())) {
                 result['$<<']("" + "<simpara>" + (dd.$text()) + "</simpara>")};
               if ($truthy(dd['$blocks?']())) {
-                result['$<<'](dd.$content())};
-            };
+                result['$<<'](dd.$content())};};
             result['$<<']("" + "</" + (item_tag) + ">");
             return result['$<<']("" + "</" + (entry_tag) + ">");}, TMP_8.$$s = self, TMP_8.$$arity = 2, TMP_8));
           if ($truthy(list_tag)) {
@@ -1473,8 +1508,8 @@ if (dt == null) dt = nil;
         if ($truthy(node['$attr?']("scaledwidth"))) {
           
           width_attribute = "" + " width=\"" + (node.$attr("scaledwidth")) + "\"";
-          depth_attribute = nil;
-          scale_attribute = nil;
+          depth_attribute = "";
+          scale_attribute = "";
         } else if ($truthy(node['$attr?']("scale"))) {
           scale_attribute = "" + " scale=\"" + (node.$attr("scale")) + "\""
         } else {
@@ -1482,19 +1517,19 @@ if (dt == null) dt = nil;
           width_attribute = (function() {if ($truthy(node['$attr?']("width"))) {
             return "" + " contentwidth=\"" + (node.$attr("width")) + "\""
           } else {
-            return nil
+            return ""
           }; return nil; })();
           depth_attribute = (function() {if ($truthy(node['$attr?']("height"))) {
             return "" + " contentdepth=\"" + (node.$attr("height")) + "\""
           } else {
-            return nil
+            return ""
           }; return nil; })();
-          scale_attribute = nil;
+          scale_attribute = "";
         };
         align_attribute = (function() {if ($truthy(node['$attr?']("align"))) {
           return "" + " align=\"" + (node.$attr("align")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         mediaobject = "" + "<mediaobject>\n" + "<imageobject>\n" + "<imagedata fileref=\"" + (node.$image_uri(node.$attr("target"))) + "\"" + (width_attribute) + (depth_attribute) + (scale_attribute) + (align_attribute) + "/>\n" + "</imageobject>\n" + "<textobject><phrase>" + (node.$alt()) + "</phrase></textobject>\n" + "</mediaobject>";
         if ($truthy(node['$title?']())) {
@@ -1520,13 +1555,13 @@ if (dt == null) dt = nil;
           listing_content = "" + "<programlisting" + ((function() {if ($truthy(informal)) {
             return listing_attributes
           } else {
-            return nil
-          }; return nil; })()) + " language=\"" + (node.$attr("language", nil, false)) + "\" linenumbering=\"" + (numbering) + "\">" + (node.$content()) + "</programlisting>";
+            return ""
+          }; return nil; })()) + " language=\"" + (node.$attr("language", "", false)) + "\" linenumbering=\"" + (numbering) + "\">" + (node.$content()) + "</programlisting>";
         } else {
           listing_content = "" + "<screen" + ((function() {if ($truthy(informal)) {
             return listing_attributes
           } else {
-            return nil
+            return ""
           }; return nil; })()) + ">" + (node.$content()) + "</screen>"
         };
         if ($truthy(informal)) {
@@ -1565,12 +1600,11 @@ if (dt == null) dt = nil;
           equation = node.$content()
         };
         if (node.$style()['$==']("asciimath")) {
-          if ($truthy(($truthy($a = (($b = $$$('::', 'AsciiMath', 'skip_raise')) ? 'constant' : nil)) ? $a : (function() {if ($truthy((($c = self['asciimath_available'], $c != null && $c !== nil) ? 'instance-variable' : nil))) {
-            return self.asciimath_available
+          if ((self.asciimath = ($truthy($a = self.asciimath) ? $a : (function() {if ($truthy(($truthy($b = (($c = $$$('::', 'AsciiMath', 'skip_raise')) ? 'constant' : nil)) ? $b : $$($nesting, 'Helpers').$require_library("asciimath", true, "warn"))['$nil?']())) {
+            return "unavailable"
           } else {
-            
-            return (self.asciimath_available = $$($nesting, 'Helpers').$require_library("asciimath", true, "warn"));
-          }; return nil; })()))) {
+            return "loaded"
+          }; return nil; })()))['$==']("loaded")) {
             equation_data = $$$('::', 'AsciiMath').$parse(equation).$to_mathml("mml:", $hash2(["xmlns:mml"], {"xmlns:mml": "http://www.w3.org/1998/Math/MathML"}))
           } else {
             equation_data = "" + "<mathphrase><![CDATA[" + (equation) + "]]></mathphrase>"
@@ -1593,12 +1627,12 @@ if (dt == null) dt = nil;
         num_attribute = (function() {if ($truthy(node.$style())) {
           return "" + " numeration=\"" + (node.$style()) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         start_attribute = (function() {if ($truthy(node['$attr?']("start"))) {
           return "" + " startingnumber=\"" + (node.$attr("start")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         result['$<<']("" + "<orderedlist" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (num_attribute) + (start_attribute) + ">");
         if ($truthy(node['$title?']())) {
@@ -1616,12 +1650,12 @@ if (item == null) item = nil;
       }, TMP_DocBook5Converter_olist_18.$$arity = 1);
       
       Opal.def(self, '$open', TMP_DocBook5Converter_open_19 = function $$open(node) {
-        var $a, $b, self = this, $case = nil;
+        var $a, $b, self = this, $case = nil, id = nil, reftext = nil, role = nil, content_spacer = nil;
 
         return (function() {$case = node.$style();
         if ("abstract"['$===']($case)) {if ($truthy((($a = node.$parent()['$=='](node.$document())) ? node.$document().$doctype()['$==']("book") : node.$parent()['$=='](node.$document())))) {
           
-          self.$warn("asciidoctor: WARNING: abstract block cannot be used in a document without a title when doctype is book. Excluding block content.");
+          self.$logger().$warn("abstract block cannot be used in a document without a title when doctype is book. Excluding block content.");
           return "";
         } else {
           return "" + "<abstract>\n" + (self.$title_tag(node)) + (self.$resolve_content(node)) + "\n" + "</abstract>"
@@ -1630,10 +1664,28 @@ if (item == null) item = nil;
           return "" + "<partintro" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">\n" + (self.$title_tag(node)) + (self.$resolve_content(node)) + "\n" + "</partintro>"
         } else {
           
-          self.$warn("asciidoctor: ERROR: partintro block can only be used when doctype is book and it's a child of a part section. Excluding block content.");
+          self.$logger().$error("partintro block can only be used when doctype is book and must be a child of a book part. Excluding block content.");
           return "";
         }}
-        else {return node.$content()}})()
+        else {
+        if ($truthy((id = node.$id()))) {
+          reftext = node.$reftext()};
+        role = node.$role();
+        if ($truthy(node['$title?']())) {
+          return "" + "<formalpara" + (self.$common_attributes(id, role, reftext)) + ">\n" + "<title>" + (node.$title()) + "</title>\n" + "<para>" + ((content_spacer = (function() {if (node.$content_model()['$==']("compound")) {
+            return $$($nesting, 'LF')
+          } else {
+            return ""
+          }; return nil; })())) + (node.$content()) + (content_spacer) + "</para>\n" + "</formalpara>"
+        } else if ($truthy(($truthy($a = id) ? $a : role))) {
+          if (node.$content_model()['$==']("compound")) {
+            return "" + "<para" + (self.$common_attributes(id, role, reftext)) + ">\n" + (node.$content()) + "\n" + "</para>"
+          } else {
+            return "" + "<simpara" + (self.$common_attributes(id, role, reftext)) + ">" + (node.$content()) + "</simpara>"
+          }
+        } else {
+          return self.$resolve_content(node)
+        };}})()
       }, TMP_DocBook5Converter_open_19.$$arity = 1);
       
       Opal.def(self, '$page_break', TMP_DocBook5Converter_page_break_20 = function $$page_break(node) {
@@ -1662,42 +1714,29 @@ if (item == null) item = nil;
         }
       }, TMP_DocBook5Converter_preamble_22.$$arity = 1);
       
-      Opal.def(self, '$quote', TMP_DocBook5Converter_quote_23 = function $$quote(node) {
-        var $a, self = this, result = nil;
+      Opal.def(self, '$quote', TMP_DocBook5Converter_quote_24 = function $$quote(node) {
+        var $a, TMP_23, self = this;
 
-        
-        result = [];
-        result['$<<']("" + "<blockquote" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">");
-        if ($truthy(node['$title?']())) {
-          result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
-        if ($truthy(($truthy($a = node['$attr?']("attribution")) ? $a : node['$attr?']("citetitle")))) {
-          
-          result['$<<']("<attribution>");
-          if ($truthy(node['$attr?']("attribution"))) {
-            result['$<<'](node.$attr("attribution"))};
-          if ($truthy(node['$attr?']("citetitle"))) {
-            result['$<<']("" + "<citetitle>" + (node.$attr("citetitle")) + "</citetitle>")};
-          result['$<<']("</attribution>");};
-        result['$<<'](self.$resolve_content(node));
-        result['$<<']("</blockquote>");
-        return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_quote_23.$$arity = 1);
+        return $send(self, 'blockquote_tag', [node, ($truthy($a = node['$has_role?']("epigraph")) ? "epigraph" : $a)], (TMP_23 = function(){var self = TMP_23.$$s || this;
+
+        return self.$resolve_content(node)}, TMP_23.$$s = self, TMP_23.$$arity = 0, TMP_23))
+      }, TMP_DocBook5Converter_quote_24.$$arity = 1);
       
-      Opal.def(self, '$thematic_break', TMP_DocBook5Converter_thematic_break_24 = function $$thematic_break(node) {
+      Opal.def(self, '$thematic_break', TMP_DocBook5Converter_thematic_break_25 = function $$thematic_break(node) {
         var self = this;
 
         return "<simpara><?asciidoc-hr?></simpara>"
-      }, TMP_DocBook5Converter_thematic_break_24.$$arity = 1);
+      }, TMP_DocBook5Converter_thematic_break_25.$$arity = 1);
       
-      Opal.def(self, '$sidebar', TMP_DocBook5Converter_sidebar_25 = function $$sidebar(node) {
+      Opal.def(self, '$sidebar', TMP_DocBook5Converter_sidebar_26 = function $$sidebar(node) {
         var self = this;
 
         return "" + "<sidebar" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">\n" + (self.$title_tag(node)) + (self.$resolve_content(node)) + "\n" + "</sidebar>"
-      }, TMP_DocBook5Converter_sidebar_25.$$arity = 1);
+      }, TMP_DocBook5Converter_sidebar_26.$$arity = 1);
       Opal.const_set($nesting[0], 'TABLE_PI_NAMES', ["dbhtml", "dbfo", "dblatex"]);
       
-      Opal.def(self, '$table', TMP_DocBook5Converter_table_31 = function $$table(node) {
-        var TMP_26, TMP_27, TMP_28, self = this, has_body = nil, result = nil, pgwide_attribute = nil, tag_name = nil, col_width_key = nil, width = nil;
+      Opal.def(self, '$table', TMP_DocBook5Converter_table_32 = function $$table(node) {
+        var TMP_27, TMP_28, TMP_29, self = this, has_body = nil, result = nil, pgwide_attribute = nil, frame = nil, tag_name = nil, col_width_key = nil, width = nil;
 
         
         has_body = false;
@@ -1705,13 +1744,15 @@ if (item == null) item = nil;
         pgwide_attribute = (function() {if ($truthy(node['$option?']("pgwide"))) {
           return " pgwide=\"1\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
+        if ((frame = node.$attr("frame", "all"))['$==']("ends")) {
+          frame = "topbot"};
         result['$<<']("" + "<" + ((tag_name = (function() {if ($truthy(node['$title?']())) {
           return "table"
         } else {
           return "informaltable"
-        }; return nil; })())) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (pgwide_attribute) + " frame=\"" + (node.$attr("frame", "all")) + "\" rowsep=\"" + ((function() {if ($truthy(["none", "cols"]['$include?'](node.$attr("grid")))) {
+        }; return nil; })())) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (pgwide_attribute) + " frame=\"" + (frame) + "\" rowsep=\"" + ((function() {if ($truthy(["none", "cols"]['$include?'](node.$attr("grid")))) {
           return 0
         } else {
           return 1
@@ -1719,10 +1760,10 @@ if (item == null) item = nil;
           return 0
         } else {
           return 1
-        }; return nil; })()) + "\"" + ((function() {if ($truthy(node['$attr?']("orientation", "landscape", nil))) {
+        }; return nil; })()) + "\"" + ((function() {if ($truthy(node['$attr?']("orientation", "landscape", false))) {
           return " orient=\"land\""
         } else {
-          return nil
+          return ""
         }; return nil; })()) + ">");
         if ($truthy(node['$option?']("unbreakable"))) {
           result['$<<']("<?dbfo keep-together=\"always\"?>")
@@ -1737,18 +1778,18 @@ if (item == null) item = nil;
           return nil
         }; return nil; })()))) {
           
-          $send($$($nesting, 'TABLE_PI_NAMES'), 'each', [], (TMP_26 = function(pi_name){var self = TMP_26.$$s || this;
+          $send($$($nesting, 'TABLE_PI_NAMES'), 'each', [], (TMP_27 = function(pi_name){var self = TMP_27.$$s || this;
 if (pi_name == null) pi_name = nil;
-          return result['$<<']("" + "<?" + (pi_name) + " table-width=\"" + (width) + "\"?>")}, TMP_26.$$s = self, TMP_26.$$arity = 1, TMP_26));
+          return result['$<<']("" + "<?" + (pi_name) + " table-width=\"" + (width) + "\"?>")}, TMP_27.$$s = self, TMP_27.$$arity = 1, TMP_27));
           return "colabswidth";
         } else {
           return "colpcwidth"
         }; return nil; })();
         result['$<<']("" + "<tgroup cols=\"" + (node.$attr("colcount")) + "\">");
-        $send(node.$columns(), 'each', [], (TMP_27 = function(col){var self = TMP_27.$$s || this;
+        $send(node.$columns(), 'each', [], (TMP_28 = function(col){var self = TMP_28.$$s || this;
 if (col == null) col = nil;
-        return result['$<<']("" + "<colspec colname=\"col_" + (col.$attr("colnumber")) + "\" colwidth=\"" + (col.$attr(col_width_key)) + "*\"/>")}, TMP_27.$$s = self, TMP_27.$$arity = 1, TMP_27));
-        $send(node.$rows().$by_section(), 'each', [], (TMP_28 = function(tsec, rows){var self = TMP_28.$$s || this, TMP_29;
+        return result['$<<']("" + "<colspec colname=\"col_" + (col.$attr("colnumber")) + "\" colwidth=\"" + (col.$attr(col_width_key)) + "*\"/>")}, TMP_28.$$s = self, TMP_28.$$arity = 1, TMP_28));
+        $send(node.$rows().$by_section(), 'each', [], (TMP_29 = function(tsec, rows){var self = TMP_29.$$s || this, TMP_30;
 if (tsec == null) tsec = nil;if (rows == null) rows = nil;
         
           if ($truthy(rows['$empty?']())) {
@@ -1756,32 +1797,32 @@ if (tsec == null) tsec = nil;if (rows == null) rows = nil;
           if (tsec['$==']("body")) {
             has_body = true};
           result['$<<']("" + "<t" + (tsec) + ">");
-          $send(rows, 'each', [], (TMP_29 = function(row){var self = TMP_29.$$s || this, TMP_30;
+          $send(rows, 'each', [], (TMP_30 = function(row){var self = TMP_30.$$s || this, TMP_31;
 if (row == null) row = nil;
           
             result['$<<']("<row>");
-            $send(row, 'each', [], (TMP_30 = function(cell){var self = TMP_30.$$s || this, halign_attribute = nil, valign_attribute = nil, colspan_attribute = nil, colnum = nil, rowspan_attribute = nil, entry_start = nil, cell_content = nil, $case = nil, entry_end = nil;
+            $send(row, 'each', [], (TMP_31 = function(cell){var self = TMP_31.$$s || this, halign_attribute = nil, valign_attribute = nil, colspan_attribute = nil, colnum = nil, rowspan_attribute = nil, entry_start = nil, cell_content = nil, $case = nil, entry_end = nil;
 if (cell == null) cell = nil;
             
               halign_attribute = (function() {if ($truthy(cell['$attr?']("halign"))) {
                 return "" + " align=\"" + (cell.$attr("halign")) + "\""
               } else {
-                return nil
+                return ""
               }; return nil; })();
               valign_attribute = (function() {if ($truthy(cell['$attr?']("valign"))) {
                 return "" + " valign=\"" + (cell.$attr("valign")) + "\""
               } else {
-                return nil
+                return ""
               }; return nil; })();
               colspan_attribute = (function() {if ($truthy(cell.$colspan())) {
                 return "" + " namest=\"col_" + ((colnum = cell.$column().$attr("colnumber"))) + "\" nameend=\"col_" + ($rb_minus($rb_plus(colnum, cell.$colspan()), 1)) + "\""
               } else {
-                return nil
+                return ""
               }; return nil; })();
               rowspan_attribute = (function() {if ($truthy(cell.$rowspan())) {
                 return "" + " morerows=\"" + ($rb_minus(cell.$rowspan(), 1)) + "\""
               } else {
-                return nil
+                return ""
               }; return nil; })();
               entry_start = "" + "<entry" + (halign_attribute) + (valign_attribute) + (colspan_attribute) + (rowspan_attribute) + ">";
               if (tsec['$==']("head")) {
@@ -1807,21 +1848,21 @@ if (cell == null) cell = nil;
               } else {
                 return "</entry>"
               }; return nil; })();
-              return result['$<<']("" + (entry_start) + (cell_content) + (entry_end));}, TMP_30.$$s = self, TMP_30.$$arity = 1, TMP_30));
-            return result['$<<']("</row>");}, TMP_29.$$s = self, TMP_29.$$arity = 1, TMP_29));
-          return result['$<<']("" + "</t" + (tsec) + ">");}, TMP_28.$$s = self, TMP_28.$$arity = 2, TMP_28));
+              return result['$<<']("" + (entry_start) + (cell_content) + (entry_end));}, TMP_31.$$s = self, TMP_31.$$arity = 1, TMP_31));
+            return result['$<<']("</row>");}, TMP_30.$$s = self, TMP_30.$$arity = 1, TMP_30));
+          return result['$<<']("" + "</t" + (tsec) + ">");}, TMP_29.$$s = self, TMP_29.$$arity = 2, TMP_29));
         result['$<<']("</tgroup>");
         result['$<<']("" + "</" + (tag_name) + ">");
         if ($truthy(has_body)) {
         } else {
-          self.$warn("asciidoctor: WARNING: tables must have at least one body row")
+          self.$logger().$warn("tables must have at least one body row")
         };
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_table_31.$$arity = 1);
+      }, TMP_DocBook5Converter_table_32.$$arity = 1);
       Opal.alias(self, "toc", "skip");
       
-      Opal.def(self, '$ulist', TMP_DocBook5Converter_ulist_34 = function $$ulist(node) {
-        var TMP_32, TMP_33, self = this, result = nil, mark_type = nil, checklist = nil, mark_attribute = nil;
+      Opal.def(self, '$ulist', TMP_DocBook5Converter_ulist_35 = function $$ulist(node) {
+        var TMP_33, TMP_34, self = this, result = nil, mark_type = nil, checklist = nil, mark_attribute = nil;
 
         
         result = [];
@@ -1830,14 +1871,14 @@ if (cell == null) cell = nil;
           result['$<<']("" + "<bibliodiv" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">");
           if ($truthy(node['$title?']())) {
             result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
-          $send(node.$items(), 'each', [], (TMP_32 = function(item){var self = TMP_32.$$s || this;
+          $send(node.$items(), 'each', [], (TMP_33 = function(item){var self = TMP_33.$$s || this;
 if (item == null) item = nil;
           
             result['$<<']("<bibliomixed>");
             result['$<<']("" + "<bibliomisc>" + (item.$text()) + "</bibliomisc>");
             if ($truthy(item['$blocks?']())) {
               result['$<<'](item.$content())};
-            return result['$<<']("</bibliomixed>");}, TMP_32.$$s = self, TMP_32.$$arity = 1, TMP_32));
+            return result['$<<']("</bibliomixed>");}, TMP_33.$$s = self, TMP_33.$$arity = 1, TMP_33));
           result['$<<']("</bibliodiv>");
         } else {
           
@@ -1849,12 +1890,12 @@ if (item == null) item = nil;
           mark_attribute = (function() {if ($truthy(mark_type)) {
             return "" + " mark=\"" + (mark_type) + "\""
           } else {
-            return nil
+            return ""
           }; return nil; })();
           result['$<<']("" + "<itemizedlist" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + (mark_attribute) + ">");
           if ($truthy(node['$title?']())) {
             result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
-          $send(node.$items(), 'each', [], (TMP_33 = function(item){var self = TMP_33.$$s || this, $a, text_marker = nil;
+          $send(node.$items(), 'each', [], (TMP_34 = function(item){var self = TMP_34.$$s || this, $a, text_marker = nil;
 if (item == null) item = nil;
           
             text_marker = (function() {if ($truthy(($truthy($a = checklist) ? item['$attr?']("checkbox") : $a))) {
@@ -1864,41 +1905,28 @@ if (item == null) item = nil;
                 return "&#10063; "
               }
             } else {
-              return nil
+              return ""
             }; return nil; })();
             result['$<<']("<listitem>");
             result['$<<']("" + "<simpara>" + (text_marker) + (item.$text()) + "</simpara>");
             if ($truthy(item['$blocks?']())) {
               result['$<<'](item.$content())};
-            return result['$<<']("</listitem>");}, TMP_33.$$s = self, TMP_33.$$arity = 1, TMP_33));
+            return result['$<<']("</listitem>");}, TMP_34.$$s = self, TMP_34.$$arity = 1, TMP_34));
           result['$<<']("</itemizedlist>");
         };
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_ulist_34.$$arity = 1);
+      }, TMP_DocBook5Converter_ulist_35.$$arity = 1);
       
-      Opal.def(self, '$verse', TMP_DocBook5Converter_verse_35 = function $$verse(node) {
-        var $a, self = this, result = nil;
+      Opal.def(self, '$verse', TMP_DocBook5Converter_verse_37 = function $$verse(node) {
+        var $a, TMP_36, self = this;
 
-        
-        result = [];
-        result['$<<']("" + "<blockquote" + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">");
-        if ($truthy(node['$title?']())) {
-          result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
-        if ($truthy(($truthy($a = node['$attr?']("attribution")) ? $a : node['$attr?']("citetitle")))) {
-          
-          result['$<<']("<attribution>");
-          if ($truthy(node['$attr?']("attribution"))) {
-            result['$<<'](node.$attr("attribution"))};
-          if ($truthy(node['$attr?']("citetitle"))) {
-            result['$<<']("" + "<citetitle>" + (node.$attr("citetitle")) + "</citetitle>")};
-          result['$<<']("</attribution>");};
-        result['$<<']("" + "<literallayout>" + (node.$content()) + "</literallayout>");
-        result['$<<']("</blockquote>");
-        return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_verse_35.$$arity = 1);
+        return $send(self, 'blockquote_tag', [node, ($truthy($a = node['$has_role?']("epigraph")) ? "epigraph" : $a)], (TMP_36 = function(){var self = TMP_36.$$s || this;
+
+        return "" + "<literallayout>" + (node.$content()) + "</literallayout>"}, TMP_36.$$s = self, TMP_36.$$arity = 0, TMP_36))
+      }, TMP_DocBook5Converter_verse_37.$$arity = 1);
       Opal.alias(self, "video", "skip");
       
-      Opal.def(self, '$inline_anchor', TMP_DocBook5Converter_inline_anchor_36 = function $$inline_anchor(node) {
+      Opal.def(self, '$inline_anchor', TMP_DocBook5Converter_inline_anchor_38 = function $$inline_anchor(node) {
         var $a, self = this, $case = nil, id = nil, path = nil, linkend = nil, text = nil;
 
         return (function() {$case = node.$type();
@@ -1916,28 +1944,30 @@ if (item == null) item = nil;
         }}
         else if ("link"['$===']($case)) {return "" + "<link xl:href=\"" + (node.$target()) + "\">" + (node.$text()) + "</link>"}
         else if ("bibref"['$===']($case)) {return "" + "<anchor" + (self.$common_attributes(node.$id(), nil, (text = node.$text()))) + "/>" + (text)}
-        else {return self.$warn("" + "asciidoctor: WARNING: unknown anchor type: " + (node.$type().$inspect()))}})()
-      }, TMP_DocBook5Converter_inline_anchor_36.$$arity = 1);
+        else {
+        self.$logger().$warn("" + "unknown anchor type: " + (node.$type().$inspect()));
+        return nil;}})()
+      }, TMP_DocBook5Converter_inline_anchor_38.$$arity = 1);
       
-      Opal.def(self, '$inline_break', TMP_DocBook5Converter_inline_break_37 = function $$inline_break(node) {
+      Opal.def(self, '$inline_break', TMP_DocBook5Converter_inline_break_39 = function $$inline_break(node) {
         var self = this;
 
         return "" + (node.$text()) + "<?asciidoc-br?>"
-      }, TMP_DocBook5Converter_inline_break_37.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_break_39.$$arity = 1);
       
-      Opal.def(self, '$inline_button', TMP_DocBook5Converter_inline_button_38 = function $$inline_button(node) {
+      Opal.def(self, '$inline_button', TMP_DocBook5Converter_inline_button_40 = function $$inline_button(node) {
         var self = this;
 
         return "" + "<guibutton>" + (node.$text()) + "</guibutton>"
-      }, TMP_DocBook5Converter_inline_button_38.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_button_40.$$arity = 1);
       
-      Opal.def(self, '$inline_callout', TMP_DocBook5Converter_inline_callout_39 = function $$inline_callout(node) {
+      Opal.def(self, '$inline_callout', TMP_DocBook5Converter_inline_callout_41 = function $$inline_callout(node) {
         var self = this;
 
         return "" + "<co" + (self.$common_attributes(node.$id())) + "/>"
-      }, TMP_DocBook5Converter_inline_callout_39.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_callout_41.$$arity = 1);
       
-      Opal.def(self, '$inline_footnote', TMP_DocBook5Converter_inline_footnote_40 = function $$inline_footnote(node) {
+      Opal.def(self, '$inline_footnote', TMP_DocBook5Converter_inline_footnote_42 = function $$inline_footnote(node) {
         var self = this;
 
         if (node.$type()['$==']("xref")) {
@@ -1945,21 +1975,21 @@ if (item == null) item = nil;
         } else {
           return "" + "<footnote" + (self.$common_attributes(node.$id())) + "><simpara>" + (node.$text()) + "</simpara></footnote>"
         }
-      }, TMP_DocBook5Converter_inline_footnote_40.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_footnote_42.$$arity = 1);
       
-      Opal.def(self, '$inline_image', TMP_DocBook5Converter_inline_image_41 = function $$inline_image(node) {
+      Opal.def(self, '$inline_image', TMP_DocBook5Converter_inline_image_43 = function $$inline_image(node) {
         var self = this, width_attribute = nil, depth_attribute = nil;
 
         
         width_attribute = (function() {if ($truthy(node['$attr?']("width"))) {
           return "" + " contentwidth=\"" + (node.$attr("width")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         depth_attribute = (function() {if ($truthy(node['$attr?']("height"))) {
           return "" + " contentdepth=\"" + (node.$attr("height")) + "\""
         } else {
-          return nil
+          return ""
         }; return nil; })();
         return "" + "<inlinemediaobject>\n" + "<imageobject>\n" + "<imagedata fileref=\"" + ((function() {if (node.$type()['$==']("icon")) {
           
@@ -1968,9 +1998,9 @@ if (item == null) item = nil;
           
           return node.$image_uri(node.$target());
         }; return nil; })()) + "\"" + (width_attribute) + (depth_attribute) + "/>\n" + "</imageobject>\n" + "<textobject><phrase>" + (node.$alt()) + "</phrase></textobject>\n" + "</inlinemediaobject>";
-      }, TMP_DocBook5Converter_inline_image_41.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_image_43.$$arity = 1);
       
-      Opal.def(self, '$inline_indexterm', TMP_DocBook5Converter_inline_indexterm_42 = function $$inline_indexterm(node) {
+      Opal.def(self, '$inline_indexterm', TMP_DocBook5Converter_inline_indexterm_44 = function $$inline_indexterm(node) {
         var self = this, terms = nil, result = nil, numterms = nil;
 
         if (node.$type()['$==']("visible")) {
@@ -1986,9 +2016,9 @@ if (item == null) item = nil;
           result['$<<']("" + "<indexterm>\n" + "<primary>" + (terms['$[]'](-1)) + "</primary>\n" + "</indexterm>");
           return $rb_times(result, $$($nesting, 'LF'));
         }
-      }, TMP_DocBook5Converter_inline_indexterm_42.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_indexterm_44.$$arity = 1);
       
-      Opal.def(self, '$inline_kbd', TMP_DocBook5Converter_inline_kbd_43 = function $$inline_kbd(node) {
+      Opal.def(self, '$inline_kbd', TMP_DocBook5Converter_inline_kbd_45 = function $$inline_kbd(node) {
         var self = this, keys = nil;
 
         if ((keys = node.$attr("keys")).$size()['$=='](1)) {
@@ -1996,9 +2026,9 @@ if (item == null) item = nil;
         } else {
           return "" + "<keycombo><keycap>" + ($rb_times(keys, "</keycap><keycap>")) + "</keycap></keycombo>"
         }
-      }, TMP_DocBook5Converter_inline_kbd_43.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_kbd_45.$$arity = 1);
       
-      Opal.def(self, '$inline_menu', TMP_DocBook5Converter_inline_menu_44 = function $$inline_menu(node) {
+      Opal.def(self, '$inline_menu', TMP_DocBook5Converter_inline_menu_46 = function $$inline_menu(node) {
         var self = this, menu = nil, submenus = nil, menuitem = nil;
 
         
@@ -2012,22 +2042,21 @@ if (item == null) item = nil;
         } else {
           return "" + "<menuchoice><guimenu>" + (menu) + "</guimenu> <guisubmenu>" + ($rb_times(submenus, "</guisubmenu> <guisubmenu>")) + "</guisubmenu> <guimenuitem>" + (node.$attr("menuitem")) + "</guimenuitem></menuchoice>"
         };
-      }, TMP_DocBook5Converter_inline_menu_44.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_menu_46.$$arity = 1);
       
       $writer = [["", "", true]];
-      $send(Opal.const_set($nesting[0], 'QUOTE_TAGS', $hash2(["monospaced", "emphasis", "strong", "double", "single", "mark", "superscript", "subscript"], {"monospaced": ["<literal>", "</literal>", false], "emphasis": ["<emphasis>", "</emphasis>", true], "strong": ["<emphasis role=\"strong\">", "</emphasis>", true], "double": ["&#8220;", "&#8221;", true], "single": ["&#8216;", "&#8217;", true], "mark": ["<emphasis role=\"marked\">", "</emphasis>", false], "superscript": ["<superscript>", "</superscript>", false], "subscript": ["<subscript>", "</subscript>", false]})), 'default=', Opal.to_a($writer));
+      $send(Opal.const_set($nesting[0], 'QUOTE_TAGS', $hash2(["monospaced", "emphasis", "strong", "double", "single", "mark", "superscript", "subscript"], {"monospaced": ["<literal>", "</literal>", false], "emphasis": ["<emphasis>", "</emphasis>", true], "strong": ["<emphasis role=\"strong\">", "</emphasis>", true], "double": ["<quote>", "</quote>", true], "single": ["<quote>", "</quote>", true], "mark": ["<emphasis role=\"marked\">", "</emphasis>", false], "superscript": ["<superscript>", "</superscript>", false], "subscript": ["<subscript>", "</subscript>", false]})), 'default=', Opal.to_a($writer));
       $writer[$rb_minus($writer["length"], 1)];;
       
-      Opal.def(self, '$inline_quoted', TMP_DocBook5Converter_inline_quoted_45 = function $$inline_quoted(node) {
-        var $a, $b, $c, $d, self = this, type = nil, equation = nil, open = nil, close = nil, supports_phrase = nil, text = nil, quoted_text = nil;
+      Opal.def(self, '$inline_quoted', TMP_DocBook5Converter_inline_quoted_47 = function $$inline_quoted(node) {
+        var $a, $b, $c, self = this, type = nil, equation = nil, open = nil, close = nil, supports_phrase = nil, text = nil, quoted_text = nil;
 
         if ((type = node.$type())['$==']("asciimath")) {
-          if ($truthy(($truthy($a = (($b = $$$('::', 'AsciiMath', 'skip_raise')) ? 'constant' : nil)) ? $a : (function() {if ($truthy((($c = self['asciimath_available'], $c != null && $c !== nil) ? 'instance-variable' : nil))) {
-            return self.asciimath_available
+          if ((self.asciimath = ($truthy($a = self.asciimath) ? $a : (function() {if ($truthy(($truthy($b = (($c = $$$('::', 'AsciiMath', 'skip_raise')) ? 'constant' : nil)) ? $b : $$($nesting, 'Helpers').$require_library("asciimath", true, "warn"))['$nil?']())) {
+            return "unavailable"
           } else {
-            
-            return (self.asciimath_available = $$($nesting, 'Helpers').$require_library("asciimath", true, "warn"));
-          }; return nil; })()))) {
+            return "loaded"
+          }; return nil; })()))['$==']("loaded")) {
             return "" + "<inlineequation>" + ($$$('::', 'AsciiMath').$parse(node.$text()).$to_mathml("mml:", $hash2(["xmlns:mml"], {"xmlns:mml": "http://www.w3.org/1998/Math/MathML"}))) + "</inlineequation>"
           } else {
             return "" + "<inlineequation><mathphrase><![CDATA[" + (node.$text()) + "]]></mathphrase></inlineequation>"
@@ -2036,7 +2065,7 @@ if (item == null) item = nil;
           return "" + "<inlineequation><alt><![CDATA[" + ((equation = node.$text())) + "]]></alt><mathphrase><![CDATA[" + (equation) + "]]></mathphrase></inlineequation>"
         } else {
           
-          $d = $$($nesting, 'QUOTE_TAGS')['$[]'](type), $a = Opal.to_ary($d), (open = ($a[0] == null ? nil : $a[0])), (close = ($a[1] == null ? nil : $a[1])), (supports_phrase = ($a[2] == null ? nil : $a[2])), $d;
+          $b = $$($nesting, 'QUOTE_TAGS')['$[]'](type), $a = Opal.to_ary($b), (open = ($a[0] == null ? nil : $a[0])), (close = ($a[1] == null ? nil : $a[1])), (supports_phrase = ($a[2] == null ? nil : $a[2])), $b;
           text = node.$text();
           if ($truthy(node.$role())) {
             if ($truthy(supports_phrase)) {
@@ -2053,9 +2082,42 @@ if (item == null) item = nil;
             return quoted_text
           };
         }
-      }, TMP_DocBook5Converter_inline_quoted_45.$$arity = 1);
+      }, TMP_DocBook5Converter_inline_quoted_47.$$arity = 1);
       
-      Opal.def(self, '$author_element', TMP_DocBook5Converter_author_element_46 = function $$author_element(doc, index) {
+      Opal.def(self, '$common_attributes', TMP_DocBook5Converter_common_attributes_48 = function $$common_attributes(id, role, reftext) {
+        var $a, self = this, attrs = nil;
+
+        if (role == null) {
+          role = nil;
+        }
+        if (reftext == null) {
+          reftext = nil;
+        }
+        
+        attrs = (function() {if ($truthy(id)) {
+          return "" + " xml:id=\"" + (id) + "\""
+        } else {
+          return ""
+        }; return nil; })();
+        if ($truthy(role)) {
+          attrs = "" + (attrs) + " role=\"" + (role) + "\""};
+        if ($truthy(reftext)) {
+          
+          if ($truthy(($truthy($a = reftext['$include?']("<")) ? (reftext = reftext.$gsub($$($nesting, 'XmlSanitizeRx'), ""))['$include?'](" ") : $a))) {
+            reftext = reftext.$squeeze(" ").$strip()};
+          if ($truthy(reftext['$include?']("\""))) {
+            reftext = reftext.$gsub("\"", "&quot;")};
+          attrs = "" + (attrs) + " xreflabel=\"" + (reftext) + "\"";};
+        return attrs;
+      }, TMP_DocBook5Converter_common_attributes_48.$$arity = -2);
+      
+      Opal.def(self, '$doctype_declaration', TMP_DocBook5Converter_doctype_declaration_49 = function $$doctype_declaration(root_tag_name) {
+        var self = this;
+
+        return nil
+      }, TMP_DocBook5Converter_doctype_declaration_49.$$arity = 1);
+      
+      Opal.def(self, '$author_tag', TMP_DocBook5Converter_author_tag_50 = function $$author_tag(doc, index) {
         var self = this, firstname_key = nil, middlename_key = nil, lastname_key = nil, email_key = nil, result = nil;
 
         if (index == null) {
@@ -2096,43 +2158,10 @@ if (item == null) item = nil;
           result['$<<']("" + "<email>" + (doc.$attr(email_key)) + "</email>")};
         result['$<<']("</author>");
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_author_element_46.$$arity = -2);
+      }, TMP_DocBook5Converter_author_tag_50.$$arity = -2);
       
-      Opal.def(self, '$common_attributes', TMP_DocBook5Converter_common_attributes_47 = function $$common_attributes(id, role, reftext) {
-        var $a, self = this, attrs = nil;
-
-        if (role == null) {
-          role = nil;
-        }
-        if (reftext == null) {
-          reftext = nil;
-        }
-        
-        attrs = (function() {if ($truthy(id)) {
-          return "" + " xml:id=\"" + (id) + "\""
-        } else {
-          return ""
-        }; return nil; })();
-        if ($truthy(role)) {
-          attrs = "" + (attrs) + " role=\"" + (role) + "\""};
-        if ($truthy(reftext)) {
-          
-          if ($truthy(($truthy($a = reftext['$include?']("<")) ? (reftext = reftext.$gsub($$($nesting, 'XmlSanitizeRx'), ""))['$include?'](" ") : $a))) {
-            reftext = reftext.$squeeze(" ").$strip()};
-          if ($truthy(reftext['$include?']("\""))) {
-            reftext = reftext.$gsub("\"", "&quot;")};
-          attrs = "" + (attrs) + " xreflabel=\"" + (reftext) + "\"";};
-        return attrs;
-      }, TMP_DocBook5Converter_common_attributes_47.$$arity = -2);
-      
-      Opal.def(self, '$doctype_declaration', TMP_DocBook5Converter_doctype_declaration_48 = function $$doctype_declaration(root_tag_name) {
-        var self = this;
-
-        return nil
-      }, TMP_DocBook5Converter_doctype_declaration_48.$$arity = 1);
-      
-      Opal.def(self, '$document_info_element', TMP_DocBook5Converter_document_info_element_50 = function $$document_info_element(doc, info_tag_prefix, use_info_tag_prefix) {
-        var TMP_49, $a, $b, self = this, result = nil, date = nil, authorcount = nil, back_cover_tag = nil, front_cover_tag = nil, head_docinfo = nil;
+      Opal.def(self, '$document_info_tag', TMP_DocBook5Converter_document_info_tag_53 = function $$document_info_tag(doc, info_tag_prefix, use_info_tag_prefix) {
+        var $a, TMP_51, $b, TMP_52, self = this, result = nil, date = nil, authorcount = nil, back_cover_tag = nil, front_cover_tag = nil, head_docinfo = nil;
 
         if (use_info_tag_prefix == null) {
           use_info_tag_prefix = false;
@@ -2140,7 +2169,7 @@ if (item == null) item = nil;
         
         if ($truthy(use_info_tag_prefix)) {
         } else {
-          info_tag_prefix = nil
+          info_tag_prefix = ""
         };
         result = [];
         result['$<<']("" + "<" + (info_tag_prefix) + "info>");
@@ -2161,20 +2190,28 @@ if (item == null) item = nil;
           };
         }; return nil; })()))) {
           result['$<<']("" + "<date>" + (date) + "</date>")};
+        if ($truthy(doc['$attr?']("copyright"))) {
+          
+          $$($nesting, 'CopyrightRx')['$=~'](doc.$attr("copyright"));
+          result['$<<']("<copyright>");
+          result['$<<']("" + "<holder>" + ((($a = $gvars['~']) === nil ? nil : $a['$[]'](1))) + "</holder>");
+          if ($truthy((($a = $gvars['~']) === nil ? nil : $a['$[]'](2)))) {
+            result['$<<']("" + "<year>" + ((($a = $gvars['~']) === nil ? nil : $a['$[]'](2))) + "</year>")};
+          result['$<<']("</copyright>");};
         if ($truthy(doc['$has_header?']())) {
           
           if ($truthy(doc['$attr?']("author"))) {
             if ($truthy($rb_lt((authorcount = doc.$attr("authorcount").$to_i()), 2))) {
               
-              result['$<<'](self.$author_element(doc));
+              result['$<<'](self.$author_tag(doc));
               if ($truthy(doc['$attr?']("authorinitials"))) {
                 result['$<<']("" + "<authorinitials>" + (doc.$attr("authorinitials")) + "</authorinitials>")};
             } else {
               
               result['$<<']("<authorgroup>");
-              $send(authorcount, 'times', [], (TMP_49 = function(index){var self = TMP_49.$$s || this;
+              $send(authorcount, 'times', [], (TMP_51 = function(index){var self = TMP_51.$$s || this;
 if (index == null) index = nil;
-              return result['$<<'](self.$author_element(doc, $rb_plus(index, 1)))}, TMP_49.$$s = self, TMP_49.$$arity = 1, TMP_49));
+              return result['$<<'](self.$author_tag(doc, $rb_plus(index, 1)))}, TMP_51.$$s = self, TMP_51.$$arity = 1, TMP_51));
               result['$<<']("</authorgroup>");
             }};
           if ($truthy(($truthy($a = doc['$attr?']("revdate")) ? ($truthy($b = doc['$attr?']("revnumber")) ? $b : doc['$attr?']("revremark")) : $a))) {
@@ -2211,29 +2248,33 @@ if (index == null) index = nil;
             result['$<<']("" + "<refentrytitle>" + (doc.$attr("mantitle")) + "</refentrytitle>")};
           if ($truthy(doc['$attr?']("manvolnum"))) {
             result['$<<']("" + "<manvolnum>" + (doc.$attr("manvolnum")) + "</manvolnum>")};
+          result['$<<']("" + "<refmiscinfo class=\"source\">" + (doc.$attr("mansource", "&#160;")) + "</refmiscinfo>");
+          result['$<<']("" + "<refmiscinfo class=\"manual\">" + (doc.$attr("manmanual", "&#160;")) + "</refmiscinfo>");
           result['$<<']("</refmeta>");
           result['$<<']("<refnamediv>");
-          if ($truthy(doc['$attr?']("manname"))) {
-            result['$<<']("" + "<refname>" + (doc.$attr("manname")) + "</refname>")};
+          if ($truthy(doc['$attr?']("mannames"))) {
+            result = $rb_plus(result, $send(doc.$attr("mannames"), 'map', [], (TMP_52 = function(n){var self = TMP_52.$$s || this;
+if (n == null) n = nil;
+            return "" + "<refname>" + (n) + "</refname>"}, TMP_52.$$s = self, TMP_52.$$arity = 1, TMP_52)))};
           if ($truthy(doc['$attr?']("manpurpose"))) {
             result['$<<']("" + "<refpurpose>" + (doc.$attr("manpurpose")) + "</refpurpose>")};
           result['$<<']("</refnamediv>");};
         return $rb_times(result, $$($nesting, 'LF'));
-      }, TMP_DocBook5Converter_document_info_element_50.$$arity = -3);
+      }, TMP_DocBook5Converter_document_info_tag_53.$$arity = -3);
       
-      Opal.def(self, '$document_ns_attributes', TMP_DocBook5Converter_document_ns_attributes_51 = function $$document_ns_attributes(doc) {
+      Opal.def(self, '$document_ns_attributes', TMP_DocBook5Converter_document_ns_attributes_54 = function $$document_ns_attributes(doc) {
         var self = this;
 
         return " xmlns=\"http://docbook.org/ns/docbook\" xmlns:xl=\"http://www.w3.org/1999/xlink\" version=\"5.0\""
-      }, TMP_DocBook5Converter_document_ns_attributes_51.$$arity = 1);
+      }, TMP_DocBook5Converter_document_ns_attributes_54.$$arity = 1);
       
-      Opal.def(self, '$lang_attribute_name', TMP_DocBook5Converter_lang_attribute_name_52 = function $$lang_attribute_name() {
+      Opal.def(self, '$lang_attribute_name', TMP_DocBook5Converter_lang_attribute_name_55 = function $$lang_attribute_name() {
         var self = this;
 
         return "xml:lang"
-      }, TMP_DocBook5Converter_lang_attribute_name_52.$$arity = 0);
+      }, TMP_DocBook5Converter_lang_attribute_name_55.$$arity = 0);
       
-      Opal.def(self, '$document_title_tags', TMP_DocBook5Converter_document_title_tags_53 = function $$document_title_tags(title) {
+      Opal.def(self, '$document_title_tags', TMP_DocBook5Converter_document_title_tags_56 = function $$document_title_tags(title) {
         var self = this;
 
         if ($truthy(title['$subtitle?']())) {
@@ -2241,9 +2282,9 @@ if (index == null) index = nil;
         } else {
           return "" + "<title>" + (title) + "</title>"
         }
-      }, TMP_DocBook5Converter_document_title_tags_53.$$arity = 1);
+      }, TMP_DocBook5Converter_document_title_tags_56.$$arity = 1);
       
-      Opal.def(self, '$resolve_content', TMP_DocBook5Converter_resolve_content_54 = function $$resolve_content(node) {
+      Opal.def(self, '$resolve_content', TMP_DocBook5Converter_resolve_content_57 = function $$resolve_content(node) {
         var self = this;
 
         if (node.$content_model()['$==']("compound")) {
@@ -2251,9 +2292,9 @@ if (index == null) index = nil;
         } else {
           return "" + "<simpara>" + (node.$content()) + "</simpara>"
         }
-      }, TMP_DocBook5Converter_resolve_content_54.$$arity = 1);
+      }, TMP_DocBook5Converter_resolve_content_57.$$arity = 1);
       
-      Opal.def(self, '$title_tag', TMP_DocBook5Converter_title_tag_55 = function $$title_tag(node, optional) {
+      Opal.def(self, '$title_tag', TMP_DocBook5Converter_title_tag_58 = function $$title_tag(node, optional) {
         var $a, self = this;
 
         if (optional == null) {
@@ -2262,10 +2303,11 @@ if (index == null) index = nil;
         if ($truthy(($truthy($a = optional['$!']()) ? $a : node['$title?']()))) {
           return "" + "<title>" + (node.$title()) + "</title>\n"
         } else {
-          return nil
+          return ""
         }
-      }, TMP_DocBook5Converter_title_tag_55.$$arity = -2);
-      return (Opal.def(self, '$cover_tag', TMP_DocBook5Converter_cover_tag_56 = function $$cover_tag(doc, face, use_placeholder) {
+      }, TMP_DocBook5Converter_title_tag_58.$$arity = -2);
+      
+      Opal.def(self, '$cover_tag', TMP_DocBook5Converter_cover_tag_59 = function $$cover_tag(doc, face, use_placeholder) {
         var $a, self = this, cover_image = nil, width_attr = nil, depth_attr = nil, attrs = nil;
 
         if (use_placeholder == null) {
@@ -2273,8 +2315,8 @@ if (index == null) index = nil;
         }
         if ($truthy((cover_image = doc.$attr("" + (face) + "-cover-image")))) {
           
-          width_attr = nil;
-          depth_attr = nil;
+          width_attr = "";
+          depth_attr = "";
           if ($truthy(($truthy($a = cover_image['$include?'](":")) ? $$($nesting, 'ImageMacroRx')['$=~'](cover_image) : $a))) {
             
             cover_image = doc.$image_uri((($a = $gvars['~']) === nil ? nil : $a['$[]'](1)));
@@ -2298,7 +2340,35 @@ if (index == null) index = nil;
         } else {
           return nil
         }
-      }, TMP_DocBook5Converter_cover_tag_56.$$arity = -3), nil) && 'cover_tag';
+      }, TMP_DocBook5Converter_cover_tag_59.$$arity = -3);
+      return (Opal.def(self, '$blockquote_tag', TMP_DocBook5Converter_blockquote_tag_60 = function $$blockquote_tag(node, tag_name) {
+        var $a, self = this, $iter = TMP_DocBook5Converter_blockquote_tag_60.$$p, $yield = $iter || nil, start_tag = nil, end_tag = nil, result = nil;
+
+        if (tag_name == null) {
+          tag_name = nil;
+        }
+        if ($iter) TMP_DocBook5Converter_blockquote_tag_60.$$p = null;
+        
+        if ($truthy(tag_name)) {
+          $a = ["" + "<" + (tag_name), "" + "</" + (tag_name) + ">"], (start_tag = $a[0]), (end_tag = $a[1]), $a
+        } else {
+          $a = ["<blockquote", "</blockquote>"], (start_tag = $a[0]), (end_tag = $a[1]), $a
+        };
+        result = ["" + (start_tag) + (self.$common_attributes(node.$id(), node.$role(), node.$reftext())) + ">"];
+        if ($truthy(node['$title?']())) {
+          result['$<<']("" + "<title>" + (node.$title()) + "</title>")};
+        if ($truthy(($truthy($a = node['$attr?']("attribution")) ? $a : node['$attr?']("citetitle")))) {
+          
+          result['$<<']("<attribution>");
+          if ($truthy(node['$attr?']("attribution"))) {
+            result['$<<'](node.$attr("attribution"))};
+          if ($truthy(node['$attr?']("citetitle"))) {
+            result['$<<']("" + "<citetitle>" + (node.$attr("citetitle")) + "</citetitle>")};
+          result['$<<']("</attribution>");};
+        result['$<<'](Opal.yieldX($yield, []));
+        result['$<<'](end_tag);
+        return $rb_times(result, $$($nesting, 'LF'));
+      }, TMP_DocBook5Converter_blockquote_tag_60.$$arity = -2), nil) && 'blockquote_tag';
     })($$($nesting, 'Converter'), $$$($$($nesting, 'Converter'), 'BuiltIn'), $nesting)
   })($nesting[0], $nesting)
 })(Opal);
