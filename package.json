@@ -40,11 +40,11 @@
   "homepage": "https://github.com/mogztter/asciidoctor-docbook.js",
   "devDependencies": {
     "asciidoctor.js": "^1.5.7-rc.1",
-    "async": "2.6.0",
+    "async": "2.6.1",
     "bestikk-download": "0.1.0",
     "bestikk-fs": "0.1.0",
     "bestikk-log": "0.1.0",
-    "mocha": "3.5.3",
+    "mocha": "5.2.0",
     "opal-compiler": "1.0.7"
   },
   "peerDependencies": {
