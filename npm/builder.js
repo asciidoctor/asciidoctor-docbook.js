@@ -7,7 +7,7 @@ const download = require('bestikk-download');
 const OpalBuilder = require('opal-compiler').Builder;
 
 function Builder () {
-  this.asciidoctorCoreVersion = '1.5.6.2';
+  this.asciidoctorCoreVersion = '1.5.7.1';
 }
 
 Builder.prototype.build = function (callback) {
