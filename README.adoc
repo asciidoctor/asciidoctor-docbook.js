@@ -7,16 +7,18 @@ endif::[]
 
 ## Install
 
- $ npm i asciidoctor.js asciidoctor-docbook.js
+```sh
+$ npm i @asciidoctor/core asciidoctor-docbook.js
+```
 
 ## Usage
 
 ```javascript
-var asciidoctor = require('asciidoctor.js')();
+var asciidoctor = require('@asciidoctor/core')();
 require('asciidoctor-docbook.js')();
 
 const options = {
-  attributes: {backend: 'docbook45', doctype: 'book'},
+  attributes: {backend: 'docbook5', doctype: 'book'},
   header_footer: true
 };
 const content = `= DocBook\n\

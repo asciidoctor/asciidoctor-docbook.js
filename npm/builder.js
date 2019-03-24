@@ -7,7 +7,7 @@ const download = require('bestikk-download');
 const OpalBuilder = require('opal-compiler').Builder;
 
 function Builder () {
-  this.asciidoctorCoreVersion = '1.5.7.1';
+  this.asciidoctorCoreVersion = '2.0.0';
 }
 
 Builder.prototype.build = function (callback) {
@@ -62,7 +62,7 @@ Builder.prototype.downloadDependencies = function (callback) {
 
 Builder.prototype.compile = function (callback) {
   log.task('compile');
-  ['docbook5', 'docbook45'].forEach((module) => {
+  ['docbook5'].forEach((module) => {
     const opalBuilder = OpalBuilder.create();
     opalBuilder.appendPaths('build/asciidoctor/lib');
     opalBuilder.appendPaths('node_modules/opal-compiler/src/stdlib');
@@ -88,12 +88,11 @@ const templateFile = function (templateFile, context, outputFile) {
 Builder.prototype.generateUMD = function (callback) {
   log.task('generate UMD');
 
-  // DocBook 4.5 + DocBook 5
+  // DocBook 5
   const docbookFiles = [
-    'build/asciidoctor-docbook45.js',
     'build/asciidoctor-docbook5.js'
   ];
-  this.concat('Asciidoctor DocBook 4.5 + 5', docbookFiles, 'build/asciidoctor-docbook.js');
+  this.concat('Asciidoctor DocBook 5', docbookFiles, 'build/asciidoctor-docbook.js');
   const asciidoctorDocbookTemplateContext = {
     '//#{asciidoctorDocbookCode}': fs.readFileSync('build/asciidoctor-docbook.js', 'utf8')
   };
