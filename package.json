@@ -1,6 +1,6 @@
 {
   "name": "@asciidoctor/docbook-converter",
-  "version": "2.0.0-master",
+  "version": "2.0.0-rc.1",
   "description": "DocBook converter for Asciidoctor.js",
   "main": "dist/main.js",
   "engines": {
