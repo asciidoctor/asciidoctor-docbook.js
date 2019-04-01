@@ -7,11 +7,7 @@
     "node": ">=8.11",
     "npm": ">=5.0.0"
   },
-  "files": [
-    "dist",
-    "LICENSE.adoc",
-    "README.adoc"
-  ],
+  "files": [],
   "scripts": {
     "build": "node tasks/build.js",
     "test": "mocha",
@@ -20,6 +16,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/asciidoctor/asciidoctor-docbook.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "asciidoc",
