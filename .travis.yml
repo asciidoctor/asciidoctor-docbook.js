@@ -2,12 +2,12 @@ sudo: false
 
 language: node_js
 node_js:
-  - "lts/*"
+- "lts/*"
 
 before_script:
-- npm install
+- npm ci
 
 script:
+- npm run lint
 - npm run build
-- npm run test
-
+- npm t
