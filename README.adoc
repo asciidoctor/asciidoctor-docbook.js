@@ -1,32 +1,33 @@
-# DocBook backend for Asciidoctor.js
+# DocBook converter for Asciidoctor.js
 
 ifdef::env-github[]
 image:http://img.shields.io/travis/asciidoctor/asciidoctor-docbook.js.svg[Travis build status, link=https://travis-ci.org/asciidoctor/asciidoctor-docbook.js]
-image:http://img.shields.io/npm/v/asciidoctor-docbook.js.svg[npm version, link=https://www.npmjs.org/package/asciidoctor-docbook.js]
+image:http://img.shields.io/npm/v/@asciidoctor/docbook-converter.svg[npm version, link=https://www.npmjs.org/package/@asciidoctor/docbook-converter]
 endif::[]
 
 ## Install
 
 ```sh
-$ npm i @asciidoctor/core asciidoctor-docbook.js
+$ npm i @asciidoctor/core @asciidoctor/docbook-converter
 ```
 
 ## Usage
 
 ```javascript
-var asciidoctor = require('@asciidoctor/core')();
-require('asciidoctor-docbook.js')();
+var asciidoctor = require('@asciidoctor/core')()
+require('@asciidoctor/docbook-converter')()
 
 const options = {
-  attributes: {backend: 'docbook5', doctype: 'book'},
-  header_footer: true
-};
+  attributes: { backend: 'docbook5', doctype: 'book' },
+  standalone: true
+}
+
 const content = `= DocBook\n\
 :doctitle: Awesome Asciidoctor\n\
 :docdate: 2016-01-01\n\n\
 == First section\n\
-Once upon a time...`;
+Once upon a time...`
 
-const docbook = asciidoctor.convert(content, options);
-//console.log(docbook);
+const docbook = asciidoctor.convert(content, options)
+//console.log(docbook)
 ```
