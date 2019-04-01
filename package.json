@@ -1,7 +1,7 @@
 {
-  "name": "asciidoctor-docbook.js",
-  "version": "1.5.7-rc.2",
-  "description": "DocBook back-end for Asciidoctor.js",
+  "name": "@asciidoctor/docbook-converter",
+  "version": "2.0.0-master",
+  "description": "DocBook converter for Asciidoctor.js",
   "main": "dist/main.js",
   "engines": {
     "node": ">=8.11",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mogztter/asciidoctor-docbook.js.git"
+    "url": "https://github.com/asciidoctor/asciidoctor-docbook.js.git"
   },
   "keywords": [
     "asciidoc",
@@ -27,7 +27,7 @@
     "opal",
     "javascript",
     "library",
-    "backend",
+    "converter",
     "docbook"
   ],
   "authors": [
@@ -35,9 +35,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mogztter/asciidoctor-docbook.js/issues"
+    "url": "https://github.com/asciidoctor/asciidoctor-docbook.js/issues"
   },
-  "homepage": "https://github.com/mogztter/asciidoctor-docbook.js",
+  "homepage": "https://github.com/asciidoctor/asciidoctor-docbook.js",
   "devDependencies": {
     "@asciidoctor/core": "^2.0.0-rc.1",
     "async": "2.6.1",
