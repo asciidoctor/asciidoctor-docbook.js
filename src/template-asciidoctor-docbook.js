@@ -5,6 +5,7 @@
     // only CommonJS-like environments that support module.exports,
     // like Node.
     module.exports = factory;
+    module.exports.register = factory;
   } else if (typeof define === 'function' && define.amd) {
     // AMD. Register a named module.
     define('asciidoctor/docbook', ['asciidoctor'], function () {

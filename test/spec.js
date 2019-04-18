@@ -1,5 +1,5 @@
 const asciidoctor = require('@asciidoctor/core')()
-require('../dist/main.js')() // Asciidoctor DocBook
+require('../dist/main.js').register() // Asciidoctor DocBook
 const chai = require('chai')
 const expect = chai.expect
 
