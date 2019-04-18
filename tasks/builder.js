@@ -70,7 +70,7 @@ const compile = () => {
 
 class Builder {
   constructor () {
-    this.asciidoctorCoreVersion = '2.0.4'
+    this.asciidoctorCoreVersion = '2.0.7'
     this.download = new Download({})
   }
 
