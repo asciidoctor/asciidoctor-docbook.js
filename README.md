@@ -1,9 +1,7 @@
 # DocBook converter for Asciidoctor.js
 
-ifdef::env-github[]
-image:http://img.shields.io/travis/asciidoctor/asciidoctor-docbook.js.svg[Travis build status, link=https://travis-ci.org/asciidoctor/asciidoctor-docbook.js]
-image:http://img.shields.io/npm/v/@asciidoctor/docbook-converter.svg[npm version, link=https://www.npmjs.org/package/@asciidoctor/docbook-converter]
-endif::[]
+[![Travis build status](http://img.shields.io/travis/asciidoctor/asciidoctor-docbook.js.svg)](https://travis-ci.org/asciidoctor/asciidoctor-docbook.js)
+[![npm version](http://img.shields.io/npm/v/@asciidoctor/docbook-converter.svg)](https://www.npmjs.com/package/@asciidoctor/docbook-converter)
 
 ## Install
 
