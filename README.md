@@ -43,3 +43,31 @@ Once upon a time...`
 const docbook = asciidoctor.convert(content, { backend: 'docbook5', standalone: true })
 //console.log(docbook)
 ```
+
+### Browser
+
+In the browser, we export a global function named `Asciidoctor.DocBook` to register the DocBook converter.
+Once Asciidoctor.js is loaded, you will need to register the converter:
+
+```js
+const asciidoctor = Asciidoctor()
+Asciidoctor.DocBook() // register the DocBook converter
+```
+
+Then, you can use the Asciidoctor.js API to convert AsciiDoc content to DocBook:
+
+```js
+const content = `= DocBook
+Author Name
+v1.0, 2020-04-13
+:doctype: book
+:doctitle: Awesome Asciidoctor
+:docdate: 2020-01-01
+
+== First section
+
+Once upon a time...`
+
+const docbook = asciidoctor.convert(content, { backend: 'docbook5', standalone: true })
+//console.log(docbook)
+```
