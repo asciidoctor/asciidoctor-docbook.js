@@ -29,20 +29,17 @@ It's also possible to use the API to convert AsciiDoc content to DocBook:
 var asciidoctor = require('@asciidoctor/core')()
 require('@asciidoctor/docbook-converter')()
 
-const options = {
-  attributes: { backend: 'docbook5', doctype: 'book' },
-  standalone: true
-}
-
 const content = `= DocBook
+Author Name
+v1.0, 2020-04-13
+:doctype: book
 :doctitle: Awesome Asciidoctor
 :docdate: 2020-01-01
-
 
 == First section
 
 Once upon a time...`
 
-const docbook = asciidoctor.convert(content, options)
+const docbook = asciidoctor.convert(content, { backend: 'docbook5', standalone: true })
 //console.log(docbook)
 ```
