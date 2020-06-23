@@ -25,7 +25,7 @@ const templateFile = function (templateFile, context, outputFile) {
 const copyToDist = () => {
   log.task('copy to dist/')
   removeDistDirSync()
-  bfs.copySync('build/asciidoctor-docbook.js', 'dist/main.js')
+  bfs.copySync('build/asciidoctor-docbook.js', 'dist/index.js')
 }
 
 const removeDistDirSync = () => {
