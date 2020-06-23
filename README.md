@@ -31,8 +31,10 @@ ECMAScript modules are the official standard format to package JavaScript code.
 We recommend to import this converter using the `import` directive:
 
 ```js
-import docbookConverter from '@asciidoctor/docbook-converter';
+import Asciidoctor from '@asciidoctor/core'
+import docbookConverter from '@asciidoctor/docbook-converter'
 
+const asciidoctor = Asciidoctor() // instantiate Asciidoctor
 docbookConverter.register() // register the DocBook converter
 
 const content = `= DocBook
@@ -50,7 +52,9 @@ const docbook = asciidoctor.convert(content, { backend: 'docbook5', standalone: 
 //console.log(docbook)
 ```
 
-**IMPORTANT:** Make sure that Asciidoctor.js is loaded before registering the DocBook converter. 
+**❗ IMPORTANT:** Make sure to instantiate Asciidoctor before registering the DocBook converter.
+
+**ℹ️  NOTE:** Since `@asciidoctor/core` is not yet published as an ECMAScript module, you will to use a Web bundler such as Webpack, Rollup or Parcel to import it using the `import` directive.
 
 #### CommonJS (require)
 
