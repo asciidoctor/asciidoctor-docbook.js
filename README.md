@@ -23,11 +23,19 @@ The above command will generate a file named _doc.xml_ using the DocBook convert
 
 ### API
 
-It's also possible to use the API to convert AsciiDoc content to DocBook:
+It's also possible to use the API to convert AsciiDoc content to DocBook.
 
-```javascript
-var asciidoctor = require('@asciidoctor/core')()
-require('@asciidoctor/docbook-converter')()
+#### ESM (import)
+
+ECMAScript modules are the official standard format to package JavaScript code.
+We recommend to import this converter using the `import` directive:
+
+```js
+import Asciidoctor from '@asciidoctor/core'
+import docbookConverter from '@asciidoctor/docbook-converter'
+
+const asciidoctor = Asciidoctor() // instantiate Asciidoctor
+docbookConverter.register() // register the DocBook converter
 
 const content = `= DocBook
 Author Name
@@ -44,30 +52,25 @@ const docbook = asciidoctor.convert(content, { backend: 'docbook5', standalone: 
 //console.log(docbook)
 ```
 
-### Browser
+**❗ IMPORTANT:** Make sure to instantiate Asciidoctor before registering the DocBook converter.
 
-In the browser, we export a global function named `Asciidoctor.DocBook` to register the DocBook converter.
-Once Asciidoctor.js is loaded, you will need to register the converter:
+**ℹ️  NOTE:** Since `@asciidoctor/core` is not yet published as an ECMAScript module, you will to use a Web bundler such as Webpack, Rollup or Parcel to import it using the `import` directive.
+
+#### CommonJS (require)
+
+```js
+const asciidoctor = require('@asciidoctor/core')()
+const docbookConverter = require('@asciidoctor/docbook-converter')
+
+docbookConverter.register() // register the DocBook converter
+```
+
+#### UMD
+
+In addition, we also provide a [Universal Module Definition](https://github.com/umdjs/umd) that exports a global object named `AsciidoctorDocBook`.
+Once Asciidoctor.js is loaded, you will need to register the converter using `register`:
 
 ```js
 const asciidoctor = Asciidoctor()
-Asciidoctor.DocBook() // register the DocBook converter
-```
-
-Then, you can use the Asciidoctor.js API to convert AsciiDoc content to DocBook:
-
-```js
-const content = `= DocBook
-Author Name
-v1.0, 2020-04-13
-:doctype: book
-:doctitle: Awesome Asciidoctor
-:docdate: 2020-01-01
-
-== First section
-
-Once upon a time...`
-
-const docbook = asciidoctor.convert(content, { backend: 'docbook5', standalone: true })
-//console.log(docbook)
+AsciidoctorDocBook.register() // register the DocBook converter
 ```

@@ -22,12 +22,6 @@ const templateFile = function (templateFile, context, outputFile) {
   fs.writeFileSync(outputFile, content, 'utf8')
 }
 
-const copyToDist = () => {
-  log.task('copy to dist/')
-  removeDistDirSync()
-  bfs.copySync('build/asciidoctor-docbook.js', 'dist/main.js')
-}
-
 const removeDistDirSync = () => {
   log.debug('remove dist directory')
   bfs.removeSync('dist')
@@ -90,7 +84,7 @@ class Builder {
       await this.downloadDependencies()
       await compile()
       generateUMD()
-      copyToDist()
+      removeDistDirSync()
     } catch (e) {
       console.log(e)
       process.exit(1)
