@@ -71,6 +71,7 @@ In addition, we also provide a [Universal Module Definition](https://github.com/
 Once Asciidoctor.js is loaded, you will need to register the converter using `register`:
 
 ```js
+/* global Asciidoctor, AsciidoctorDocBook */
 const asciidoctor = Asciidoctor()
 AsciidoctorDocBook.register() // register the DocBook converter
 ```
