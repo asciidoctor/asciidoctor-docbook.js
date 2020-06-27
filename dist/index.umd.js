@@ -42,8 +42,8 @@
         $send(Opal.const_set($nesting[0], 'QUOTE_TAGS', $hash2(["monospaced", "emphasis", "strong", "double", "single", "mark", "superscript", "subscript"], {"monospaced": ["<literal>", "</literal>"], "emphasis": ["<emphasis>", "</emphasis>", true], "strong": ["<emphasis role=\"strong\">", "</emphasis>", true], "double": ["<quote>", "</quote>", true], "single": ["<quote>", "</quote>", true], "mark": ["<emphasis role=\"marked\">", "</emphasis>"], "superscript": ["<superscript>", "</superscript>"], "subscript": ["<subscript>", "</subscript>"]})), 'default=', Opal.to_a($writer));
         $writer[$rb_minus($writer["length"], 1)];      Opal.const_set($nesting[0], 'MANPAGE_SECTION_TAGS', $hash2(["section", "synopsis"], {"section": "refsection", "synopsis": "refsynopsisdiv"}));
         Opal.const_set($nesting[0], 'TABLE_PI_NAMES', ["dbhtml", "dbfo", "dblatex"]);
-        Opal.const_set($nesting[0], 'CopyrightRx', /^(.+?)(?: ((?:\d{4}\-)?\d{4}))?$/);
-        Opal.const_set($nesting[0], 'ImageMacroRx', /^image::?(.+?)\[(.*?)\]$/);
+        Opal.const_set($nesting[0], 'CopyrightRx', new RegExp("" + "^(" + ($$($nesting, 'CC_ANY')) + "+?)(?: ((?:\\d{4}\\-)?\\d{4}))?$"));
+        Opal.const_set($nesting[0], 'ImageMacroRx', new RegExp("" + "^image::?(\\S|\\S" + ($$($nesting, 'CC_ANY')) + "*?\\S)\\[(" + ($$($nesting, 'CC_ANY')) + "+)?\\]$"));
         
         Opal.def(self, '$initialize', $DocBook5Converter_initialize$1 = function $$initialize(backend, opts) {
           var self = this;
@@ -62,16 +62,16 @@
           
           result = ["<?xml version=\"1.0\" encoding=\"UTF-8\"?>"];
           if ($truthy(node['$attr?']("toc"))) {
-            if ($truthy(node['$attr?']("toclevels"))) {
-              result['$<<']("" + "<?asciidoc-toc maxdepth=\"" + (node.$attr("toclevels")) + "\"?>");
+            result['$<<']((function() {if ($truthy(node['$attr?']("toclevels"))) {
+              return "" + "<?asciidoc-toc maxdepth=\"" + (node.$attr("toclevels")) + "\"?>"
             } else {
-              result['$<<']("<?asciidoc-toc?>");
-            }}        if ($truthy(node['$attr?']("sectnums"))) {
-            if ($truthy(node['$attr?']("sectnumlevels"))) {
-              result['$<<']("" + "<?asciidoc-numbered maxdepth=\"" + (node.$attr("sectnumlevels")) + "\"?>");
+              return "<?asciidoc-toc?>"
+            } })());}        if ($truthy(node['$attr?']("sectnums"))) {
+            result['$<<']((function() {if ($truthy(node['$attr?']("sectnumlevels"))) {
+              return "" + "<?asciidoc-numbered maxdepth=\"" + (node.$attr("sectnumlevels")) + "\"?>"
             } else {
-              result['$<<']("<?asciidoc-numbered?>");
-            }}        lang_attribute = (function() {if ($truthy(node['$attr?']("nolang"))) {
+              return "<?asciidoc-numbered?>"
+            } })());}        lang_attribute = (function() {if ($truthy(node['$attr?']("nolang"))) {
             return ""
           } else {
             return "" + " xml:lang=\"" + (node.$attr("lang", "en")) + "\""
@@ -982,7 +982,7 @@
               
               attrlist = (($a = $gvars['~']) === nil ? nil : $a['$[]'](2));
               cover_image = doc.$image_uri((($a = $gvars['~']) === nil ? nil : $a['$[]'](1)));
-              if ($truthy(attrlist['$empty?']())) ; else {
+              if ($truthy(attrlist)) {
                 
                 attrs = $$($nesting, 'AttributeList').$new(attrlist).$parse(["alt", "width", "height"]);
                 if ($truthy(attrs['$key?']("scaledwidth"))) {
@@ -991,7 +991,7 @@
                   
                   if ($truthy(attrs['$key?']("width"))) {
                     width_attr = "" + " contentwidth=\"" + (attrs['$[]']("width")) + "\"";}                if ($truthy(attrs['$key?']("height"))) {
-                    depth_attr = "" + " contentdepth=\"" + (attrs['$[]']("height")) + "\"";}              }            }}          return "" + "<cover role=\"" + (face) + "\">\n" + "<mediaobject>\n" + "<imageobject>\n" + "<imagedata fileref=\"" + (cover_image) + "\"" + (width_attr) + (depth_attr) + "/>\n" + "</imageobject>\n" + "</mediaobject>\n" + "</cover>";
+                    depth_attr = "" + " contentdepth=\"" + (attrs['$[]']("height")) + "\"";}              }}}          return "" + "<cover role=\"" + (face) + "\">\n" + "<mediaobject>\n" + "<imageobject>\n" + "<imagedata fileref=\"" + (cover_image) + "\"" + (width_attr) + (depth_attr) + "/>\n" + "</imageobject>\n" + "</mediaobject>\n" + "</cover>";
           } else if ($truthy(use_placeholder)) {
             return "" + "<cover role=\"" + (face) + "\"/>"
           } else {
