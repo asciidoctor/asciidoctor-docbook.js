@@ -1,3 +1,4 @@
+const ospath = require('path')
 const asciidoctor = require('@asciidoctor/core')()
 require('../dist/index.cjs').register() // Asciidoctor DocBook
 const AsciidoctorConvertSpec = require('./shared/spec.js')
@@ -10,7 +11,8 @@ AsciidoctorConvertSpec(asciidoctor, expect)
 describe('Docinfo', () => {
   it('should include a private docinfo header', () => {
     const options = { backend: 'docbook', standalone: true, safe: 'safe', to_file: false }
-    const xml = asciidoctor.convertFile(`${__dirname}/fixtures/doc.adoc`, options)
+    const file = ospath.join(__dirname, 'fixtures', 'doc.adoc')
+    const xml = asciidoctor.convertFile(file, options)
     expect(xml).to.equal(`<?xml version="1.0" encoding="UTF-8"?>
 <?asciidoc-toc?>
 <?asciidoc-numbered?>
