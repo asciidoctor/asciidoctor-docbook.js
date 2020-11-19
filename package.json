@@ -54,7 +54,7 @@
     "portfinder": "^1.0.26",
     "puppeteer": "^5.1.0",
     "rollup": "^2.18.0",
-    "standard": "^15.0.1"
+    "standard": "^16.0.3"
   },
   "peerDependencies": {
     "@asciidoctor/core": "^2.0.0-rc.1"
