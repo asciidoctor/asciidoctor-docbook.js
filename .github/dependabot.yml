@@ -1,0 +1,43 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: opal-compiler
+    versions:
+    - "> 1.0.13"
+  - dependency-name: rollup
+    versions:
+    - 2.38.1
+    - 2.38.3
+    - 2.38.4
+    - 2.39.0
+    - 2.39.1
+    - 2.40.0
+    - 2.41.0
+    - 2.41.1
+    - 2.41.2
+    - 2.41.3
+    - 2.41.4
+    - 2.41.5
+    - 2.42.0
+    - 2.42.2
+    - 2.42.4
+    - 2.43.1
+    - 2.44.0
+    - 2.45.0
+  - dependency-name: mocha
+    versions:
+    - 8.3.1
+  - dependency-name: chai
+    versions:
+    - 4.3.1
+    - 4.3.3
+  - dependency-name: puppeteer
+    versions:
+    - 6.0.0
+    - 7.0.0
+    - 7.1.0
