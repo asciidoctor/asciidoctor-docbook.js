@@ -8,6 +8,13 @@
     "schedule:monthly",
     ":maintainLockFilesMonthly"
   ],
+  "packageRules": [
+    {
+      // disable opal-compiler automatic update (too sensitive)
+      "matchPackagePatterns": ["opal-compiler"],
+      "enabled": false
+    }
+  ],
   "lockFileMaintenance": {
     "extends": [
       "group:all"
