@@ -1,12 +1,12 @@
 'use strict'
 
-const fs = require('fs')
-const childProcess = require('child_process')
+const fs = require('node:fs')
+const childProcess = require('node:child_process')
 
 class MockServer {
   constructor (listener) {
     // we need to use "fork" to spawn a new Node.js process otherwise we will create a deadlock.
-    this.childProcess = childProcess.fork(`${__dirname}/bin/mock-server.js`)
+    this.childProcess = childProcess.fork(`${__dirname}/bin/mock-server.cjs`)
     if (listener) {
       this.childProcess.on('message', listener)
     }

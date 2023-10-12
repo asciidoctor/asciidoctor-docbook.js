@@ -1,7 +1,8 @@
-const ospath = require('path')
+/* global describe, it */
+const ospath = require('node:path')
 const asciidoctor = require('@asciidoctor/core')()
 require('../dist/index.cjs').register() // Asciidoctor DocBook
-const AsciidoctorConvertSpec = require('./shared/spec.js')
+const AsciidoctorConvertSpec = require('./shared/spec.cjs')
 
 const chai = require('chai')
 const expect = chai.expect

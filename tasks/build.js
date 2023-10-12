@@ -1,4 +1,4 @@
-const Builder = require('./builder.js')
+import Builder from './builder.js'
 const builder = new Builder()
 
 ;(async () => {

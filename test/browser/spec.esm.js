@@ -1,4 +1,6 @@
 /* global AsciidoctorBrowserSpec, mocha, mochaOpts, testOpts */
+
+import Asciidoctor from '../../node_modules/@asciidoctor/core/dist/browser/asciidoctor.js'
 import AsciidoctorDocBook from '../../dist/index.esm.js'
 
 (async () => {
@@ -15,7 +17,7 @@ import AsciidoctorDocBook from '../../dist/index.esm.js'
     reporter: reporter
   })
 
-  const asciidoctor = globalThis.Asciidoctor()
+  const asciidoctor = Asciidoctor()
   AsciidoctorDocBook.register()
 
   const expect = chai.expect

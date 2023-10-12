@@ -1,9 +1,10 @@
 'use strict'
-const fs = require('fs')
-const log = require('bestikk-log')
-const bfs = require('bestikk-fs')
-const Download = require('bestikk-download')
-const OpalBuilder = require('opal-compiler').Builder
+
+import fs from 'node:fs'
+import log from 'bestikk-log'
+import bfs from 'bestikk-fs'
+import Download from 'bestikk-download'
+import { Builder as OpalBuilder } from 'opal-compiler'
 
 const concat = (message, files, destination) => {
   log.debug(message)
@@ -11,7 +12,7 @@ const concat = (message, files, destination) => {
 }
 
 const templateFile = function (templateFile, context, outputFile) {
-  const template = fs.readFileSync(templateFile, 'utf8')
+  const template = fs.readFileSync(templateFile, { encoding: 'utf8' })
   const lines = template.split('\n')
   lines.forEach(function (line, index, result) {
     if (line in context) {
@@ -62,9 +63,9 @@ const compile = () => {
   fs.writeFileSync(`build/asciidoctor-${module}.js`, opalBuilder.build(`asciidoctor/converter/${module}`).toString(), 'utf8')
 }
 
-class Builder {
+export default class Builder {
   constructor () {
-    this.asciidoctorCoreVersion = '2.0.10'
+    this.asciidoctorCoreVersion = '2.0.20'
     this.download = new Download({})
   }
 
@@ -99,5 +100,3 @@ class Builder {
     await bfs.untar('build/asciidoctor.tar.gz', 'asciidoctor', 'build')
   }
 }
-
-module.exports = Builder

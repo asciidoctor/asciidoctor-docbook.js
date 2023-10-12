@@ -42,7 +42,7 @@ module.exports.configure = (mockServer) => {
     mimetype: 'application/javascript'
   }))
   files.push(rootRelativeFile({
-    path: '../shared/spec.js',
+    path: '../shared/spec.cjs',
     mimetype: 'application/javascript'
   }))
   files.push({
