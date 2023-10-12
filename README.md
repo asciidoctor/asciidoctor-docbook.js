@@ -1,6 +1,6 @@
 # DocBook converter for Asciidoctor.js
 
-[![Build](https://github.com/asciidoctor/asciidoctor-docbook.js/workflows/Build/badge.svg)](https://github.com/asciidoctor/asciidoctor-docbook.js/actions?query=workflow%3ABuild)
+[![Build](https://github.com/asciidoctor/asciidoctor-docbook.js/actions/workflows/build.yml/badge.svg)](https://github.com/asciidoctor/asciidoctor-docbook.js/actions/workflows/build.yml)
 [![npm version](http://img.shields.io/npm/v/@asciidoctor/docbook-converter.svg)](https://www.npmjs.com/package/@asciidoctor/docbook-converter)
 
 ## Install
