@@ -53,7 +53,7 @@
     "mock-http-server": "1.4.5",
     "opal-compiler": "3.0.0",
     "portfinder": "1.0.32",
-    "puppeteer": "^13.0.0",
+    "puppeteer": "~23.2",
     "rollup": "3.21.6",
     "standard": "~17.0"
   },
