@@ -47,15 +47,15 @@
     "bestikk-download": "1.0.0",
     "bestikk-fs": "1.0.0",
     "bestikk-log": "0.1.0",
-    "chai": "~4.3",
+    "chai": "~5.1.0",
     "dirty-chai": "2.0.1",
-    "mocha": "~10.2",
+    "mocha": "~10.7.0",
     "mock-http-server": "1.4.5",
     "opal-compiler": "3.0.0",
     "portfinder": "1.0.32",
-    "puppeteer": "~23.2",
-    "rollup": "3.21.6",
-    "standard": "~17.0"
+    "puppeteer": "~23.6.0",
+    "rollup": "4.24.0",
+    "standard": "~17.1.0"
   },
   "peerDependencies": {
     "@asciidoctor/core": ">= 3.0 < 4.0"
